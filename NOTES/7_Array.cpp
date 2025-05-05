@@ -9,12 +9,12 @@ int main()
   // Array
 
   string cars[4] = {"Tata", "BMW", "GTR"}; // Declaring Array
-  cars[2] = "GT-R";                        // Assigning or overwriting value to Array
+  cars[2] = "GT-R";                        // Assigning or overwriting value to array
 
   int nums[3] = {1945, 1916, 1970};
   nums[2] = 1969;
 
-  cout << cars[2] << "\t" << nums[2] << "\n\n"; // Array Index starts from 0
+  cout << cars[2] << "\t" << nums[2] << "\n\n"; // array Index starts from 0
 
   for (int a = 0; a < 3; a++)
   {
