@@ -21,16 +21,16 @@ int main()
     cout << a << ") " << cars[a] << " - " << nums[a] << "\n";
   }
 
-  cout << "\n";
+  cout << "\n\n";
+
+  // For-each Loop
 
   string flavs[3];
   flavs[0] = "Butterscotch";
   flavs[1] = "Chocolate";
   flavs[2] = "Vanila";
 
-  // For-each Loop
-
-  for (string b : flavs)
+  for (string b : flavs) // Loop through array's elements
   {
     cout << b << "\t";
   }
@@ -38,11 +38,11 @@ int main()
   cout << "\n\n";
 
   int nums1[4] = {2, 5, 7, 3};
-  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int);
+  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int); // Size of array OR No. of array's elements
 
   cout << "\n";
 
-  int z = sizeof(nums1) / sizeof(int); // Size of array or No. of array's elements
+  int z = nums1.size(); // No. of array's elements
 
   for (int c = 0; c < z; c++)
   {
