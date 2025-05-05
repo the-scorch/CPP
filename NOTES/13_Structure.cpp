@@ -19,8 +19,8 @@ int main()
     cout << myStruct.nums2 << "\t";
     cout << myStruct.words << "\n\n";
 
-    struct Rich
-    { // Structure Name
+    struct Rich // Structure Name
+    {
         string name;
         int age;
         string networth;
@@ -41,6 +41,7 @@ int main()
          << rich2.name << "\t" << rich2.age << "\t" << rich2.networth << "\n\n";
 
     // Enumeration - group of Constants
+
     enum Level
     {
         LOW = 1,
