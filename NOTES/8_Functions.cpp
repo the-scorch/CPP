@@ -32,7 +32,7 @@ void swap(string &d, string &e) // Pass by Reference
 
 void function2()
 {
-    int h = 24, // Local Scope of variable
+    int h = 24, // Local Scope variable
         i = 10,
         j = 2017;
 
@@ -40,7 +40,7 @@ void function2()
          << h << "\t" << i << "\t" << j << "\t";
 }
 
-int x = 5; // Global Scope of variable
+int x = 5; // Global Scope variable
 
 // Arrays in function
 void function3(int nums[4])
