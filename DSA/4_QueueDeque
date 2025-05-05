@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <queue>
+#include <deque>
+using namespace std;
+
+int main()
+{
+
+    queue<char> line; // Declaration
+
+    line.push('Z');
+    line.push('A');
+    line.push('B');
+    line.push('C');
+    line.push('W');
+
+    cout << line.front() << "\t" << line.back() << "\n\n";
+
+    line.front() = 'Y'; // change the First element
+    line.back() = 'D';  // change the Last element
+
+    cout << line.front() << "\t" << line.back() << "\n\n";
+
+    line.pop(); // Remove the first element
+
+    coout << line.front() << "\n\n";
+
+    //Deque
+
+    deque<char> line2 = {'P', 'Q', 'R', 'S'}; // Declaration
+
+
+
+    return 0;
+}

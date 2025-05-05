@@ -14,7 +14,7 @@ int main()
     Vector - stores elements like an array but dynamic size
     List - stores elememts in sequence & they are connected to each other
     Stack - stores in (LIFO) Last In First Out order
-    Queue - stores in (FIFO) First In First Out order
+    Queue - stores in (FIFO) First In First Out order & Deque - same but allows insertion and deletion from both ends
     Set - stores Unique elements
     Map - stores in key/value pairs*/
 
