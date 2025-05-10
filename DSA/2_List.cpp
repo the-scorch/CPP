@@ -47,7 +47,7 @@ int main()
     list<string> texts;
 
     cout << texts.size()           // gives the list Size
-         << "\t" << texts.empty(); // tells list has elements = 1 OR not = 0
+         << "\t" << texts.empty(); // if No elements = 1, Else = 0
 
     cout << endl;
 

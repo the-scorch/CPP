@@ -29,7 +29,7 @@ int main()
      stack<int> bakery;
 
      cout << bakery.size()           // gives the stack Size
-          << "\t" << bakery.empty(); // tells stack has elements = 1 OR not = 0
+          << "\t" << bakery.empty(); // if No elements = 1, Else = 0
 
      cout << endl
           << cake.size()

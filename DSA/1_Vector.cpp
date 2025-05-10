@@ -55,7 +55,7 @@ int main()
      vector<int> nums;
 
      cout << nums.size()           // gives the vector Size
-          << "\t" << nums.empty(); // tells vector has elements = 1 OR not = 0
+          << "\t" << nums.empty(); // if No elements = 0, Else = 0
 
      cout << endl
           << foods.size() << "\t" << foods.empty();

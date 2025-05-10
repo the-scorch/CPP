@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    set<string> mySet = {"Alpha", "Beta", "Gamma", "Delta", "Epsilon"}; // Declaration - Sort in Ascending order (default)
+    set<string> mySet = {"Alpha", "Beta", "Gamma", "Delta", "Epsilon"}; // Declaration - sorted in Ascending order (default)
 
     for (string str : mySet) // sorted alphabetically
     {
@@ -60,10 +60,11 @@ int main()
         cout << d << "\t";
     }
 
-    cout << "\n\n"
-         << mySet5.size(); // gives the size of set
-    cout << "\t"
-         << mySet5.empty(); // if No elements = 0, Else = 1
+    cout << "\n\n";
+
+    cout << mySet5.size() // gives the size of set
+         << "\t"
+         << mySet5.empty(); // if No elements = 1, Else = 0
 
     mySet5.clear(); // removes all elements of set
 

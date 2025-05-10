@@ -62,7 +62,7 @@ int main()
 
     cout << line2.size() << "\t"; // gives the size of the deque
 
-    cout << line2.empty() << "\n\n"; // if No elements = 0, Else = 1
+    cout << line2.empty() << "\n\n"; // if No elements = 1, Else = 0
 
     return 0;
 }
