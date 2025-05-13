@@ -8,7 +8,10 @@ int main()
 
     list<int> todo = {20, 3, 4, 5, 6, 7, 8, 90}; // Declaration
 
-    for (int i : todo) // print all elements
+    for (int i : todo) // for-each loop
+    {
+        cout << i << "\t";
+    }
     {
         cout << i << "\t";
     }

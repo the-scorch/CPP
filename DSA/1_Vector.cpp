@@ -7,7 +7,7 @@ int main()
 {
      vector<string> foods = {"Oats", "Eggs", "Lassi", "Chicken", "Milk"}; // Declaration
 
-     for (string food : foods) // print all elements
+     for (string food : foods) // for-each loop
      {
           cout << food << "\t";
      }
@@ -36,7 +36,7 @@ int main()
      foods.push_back("Peanuts"); // add elements at end
      foods.push_back("Banana");
 
-     for (string food : foods) // Print all elements
+     for (string food : foods)
      {
           cout << food << "\t";
      }
@@ -45,7 +45,7 @@ int main()
 
      foods.pop_back(); // removes an element from end
 
-     for (string food : foods) // Print all elements
+     for (string food : foods)
      {
           cout << food << "\t";
      }
@@ -61,6 +61,27 @@ int main()
           << foods.size() << "\t" << foods.empty();
 
      cout << "\n\n";
+
+     // Iterator
+
+     //vector<string>::iterator it; 
+     auto it = foods.begin(); // Declaration
+
+     it = foods.begin(); // pointing to first element
+     cout << *it << "\t";
+
+     it = foods.begin() + 1; // pointing to second element
+     cout << *it << "\t";
+
+     it = foods.end() - 1; // pointing to last element
+     cout << *it << "\n\n";
+
+     for(it; it != foods.end(); it++) // using iterator in for loop
+     {
+          cout << *it << "\t";
+     }
+
+
 
      return 0;
 }
