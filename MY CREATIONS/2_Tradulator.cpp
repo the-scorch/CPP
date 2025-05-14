@@ -1,26 +1,45 @@
 #include <bits/stdc++.h>
+#include <string>
 using namespace std;
 
 int main()
 {
-    cout << "Enter the Buy Value: ";
-    double b;
-    cin >> b;
+    cout << "\tWelcome to Tradulator!!\n\n";
 
+    double i;
+    cout << "Enter the Invested Value: ";
+    cin >> i;
+
+    double s;
     cout << "Enter the Sell Value: ";
-    double a;
-    cin >> a;
+    cin >> s;
 
-    a -= 0.005 * a; // Groww Charges
-    a -= 13.5;      // DP Charges
+    string ptf;
+    cout << "Type the Trading Platform: ";
+    cin.ignore(); // To ignore the newline character left in the input buffer
+    getline(cin, ptf);
 
-    cout << "\nAmount = " << a;
+    if (ptf == "IND Money" || ptf == "Groww")
+    {
+        double c = 0;    // Charges
+        c += 0.0012 * s; // Others
+        c += 20;         // Brokerage
+        c += 18.5;       // DP
+        c += 0.18 * c;   // GST on Charges
 
-    double c = a - b;
-    cout <<  "\n\nProfit = " << c;
+        cout << "\nCharges = " << c;
 
-    c -= 0.15 * c; // Short-Term CG Tax
-    cout << "\n\nProfit After Tax = " << c;
+        double a = s - c;
+        cout << "\n\n\tNet Amount = " << a;
+
+        double p = a - i;
+        cout << "\n\n\tProfit = " << p;
+
+        double t = 0.15 * p; // Short-Term CG Tax of India
+        cout << "\n\nTaxes = " << t;
+
+        cout << "\n\n\tNet Profit = " << p - t;
+    }
 
     return 0;
 }

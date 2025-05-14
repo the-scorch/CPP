@@ -42,12 +42,12 @@ int main()
 
      cout << txt1 << "\n\n";
 
-     /*cin takes space as Terminater
-     getline(cin, string) - will take whole line*/
+     // cin takes space as terminator
 
      string fullName;
      cout << "Type your Full Name: ";
-     getline(cin, fullName);
+     cin.ignore();           // To ignore the newline character left in the input buffer
+     getline(cin, fullName); // take whole line as input
      cout << "Your name is: " << fullName << "\n\n";
 
      return 0;
