@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    cout << "\tWelcome to Tradulator!!\n\n";
+    cout << "\n\tWelcome to Tradulator!!\n\n";
 
     double i;
     cout << "Enter the Invested Value: ";
