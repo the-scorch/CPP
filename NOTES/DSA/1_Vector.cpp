@@ -65,9 +65,7 @@ int main()
      // Iterator
 
      //vector<string>::iterator it; 
-     auto it = foods.begin(); // Declaration
-
-     it = foods.begin(); // pointing to first element
+     auto it = foods.begin(); // Declare to first element
      cout << *it << "\t";
 
      it = foods.begin() + 1; // pointing to second element
@@ -76,12 +74,27 @@ int main()
      it = foods.end() - 1; // pointing to last element
      cout << *it << "\n\n";
 
-     for(it; it != foods.end(); it++) // using iterator in for loop
+     for(it = foods.begin(); it != foods.end(); it++)
+     {
+          if(*it == "Chicken") // finds &
+          {
+               it = foods.erase(it); // remove the element
+          }
+     }
+
+     for(it = foods.begin(); it != foods.end(); it++) // for-loop using iterator
      {
           cout << *it << "\t";
      }
 
+     cout << "\n\n";
 
+     vector <string> shapes = {"Triangle", "Square", "Pentagon", "Hexagon", "Circle"};
+
+     for(auto it1 = shapes.rbegin(); it1 != shapes.rend(); it1++) // reverse iterator for-loop
+     {
+          cout << *it1 << "\t";
+     }
 
      return 0;
 }

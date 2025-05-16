@@ -31,9 +31,9 @@ int main()
 
     // Deque
 
-    deque<char> line2 = {'P', 'Q', 'W', 'S', 'T'}; // Declaration
+    deque<char> line1 = {'P', 'Q', 'W', 'S', 'T'}; // Declaration
 
-    for (char a : line2) // printing the stack elements
+    for (char a : line1) // printing the stack elements
     {
         cout << a << "\t";
     }
@@ -42,27 +42,61 @@ int main()
 
     // deque functions
 
-    cout << line2[1] << "\t" << line2.at(3) << "\n"; // gives the 2nd & 4th element (safer than [] operator)
+    cout << line1[1] << "\t" << line1.at(3) << "\n"; // gives the 2nd & 4th element (safer than [] operator)
 
-    cout << line2.front() << "\t" << line2.back() << "\n"; // gives the first & last element
+    cout << line1.front() << "\t" << line1.back() << "\n"; // gives the first & last element
 
-    line2.at(2) = 'R'; // change the 3rd element
+    line1.at(2) = 'R'; // change the 3rd element
 
-    cout << line2.at(2) << "\n";
+    cout << line1.at(2) << "\n";
 
-    line2.push_back('T');  // add element at the end
-    line2.push_front('O'); // add element at the front
+    line1.push_back('T');  // add element at the end
+    line1.push_front('O'); // add element at the front
 
-    cout << line2.front() << "\t" << line2.back() << "\n\n";
+    cout << line1.front() << "\t" << line1.back() << "\n\n";
 
-    line2.pop_back();  // remove the last element
-    line2.pop_front(); // remove the first element
+    line1.pop_back();  // remove the last element
+    line1.pop_front(); // remove the first element
 
-    cout << line2.front() << "\t" << line2.back() << "\n\n";
+    cout << line1.front() << "\t" << line1.back() << "\n\n";
 
-    cout << line2.size() << "\t"; // gives the size of the deque
+    cout << line1.size() << "\t"; // gives the size of the deque
 
-    cout << line2.empty() << "\n\n"; // if No elements = 1, Else = 0
+    cout << line1.empty() << "\n\n"; // if No elements = 1, Else = 0
+
+    // Iterator
+
+    // vector<string>::iterator it;
+    auto it = line1.begin(); // Declare to first element
+    cout << *it << "\t";
+
+    it = line1.begin() + 1; // pointing to second element
+    cout << *it << "\t";
+
+    it = line1.end() - 1; // pointing to last element
+    cout << *it << "\n\n";
+
+    for (it = line1.begin(); it != line1.end(); it++)
+    {
+        if (*it == 'R') // finds &
+        {
+            it = line1.erase(it); // remove the element
+        }
+    }
+
+    for (it = line1.begin(); it != line1.end(); it++) // for-loop using iterator
+    {
+        cout << *it << "\t";
+    }
+
+    cout << "\n\n";
+
+    deque<char> lane = {'Q', 'W', 'E', 'R', 'T', 'Y'};
+
+    for (auto it1 = lane.rbegin(); it1 != lane.rend(); it1++) // reverse iterator for-loop
+    {
+        cout << *it1 << "\t";
+    }
 
     return 0;
 }

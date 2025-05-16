@@ -71,5 +71,43 @@ int main()
     cout << endl
          << mySet5.empty();
 
+    // Iterator
+
+    // vector<string>::iterator it;
+    auto it = mySet4.begin(); // Declare to first element
+    cout << *it << "\t";
+
+    advance(it, 1); // pointing to second element
+    cout << *it << "\t";
+
+    it = prev(mySet4.end()); // pointing to last element
+    cout << *it << "\n\n";
+
+    for (it = mySet4.begin(); it != mySet4.end();)
+    {
+        if (*it == "C") // finds &
+        {
+            it = mySet4.erase(it); // remove the element
+        }
+        else
+        {
+            it++;
+        }
+    }
+
+    for (it = mySet4.begin(); it != mySet4.end(); it++) // for-loop using iterator
+    {
+        cout << *it << "\t";
+    }
+
+    cout << "\n\n";
+
+    set<string> dim = {"Length", "Breadth", "Height", "Space", "Time"};
+
+    for (auto it1 = dim.rbegin(); it1 != dim.rend(); it1++) // reverse iterator for-loop
+    {
+        cout << *it1 << "\t";
+    }
+
     return 0;
 }

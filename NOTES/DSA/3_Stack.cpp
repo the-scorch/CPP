@@ -36,6 +36,6 @@ int main()
           << "\t" << cake.empty();
 
      cout << "\n\n";
-
+     
      return 0;
 }
