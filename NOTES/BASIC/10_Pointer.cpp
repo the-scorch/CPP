@@ -4,7 +4,6 @@ using namespace std;
 
 int main()
 {
-
     // Reference Variable
 
     string snack = "Fast Foods";
@@ -13,7 +12,16 @@ int main()
     int zero = 0;
     int &null = zero;
 
-    cout << bite << "\t" << null << "\n\n";
+    cout << bite << "\t" << null << endl;
+
+    int x = 10;
+    int &ref = x;
+
+    ref = 20;
+    cout << "x = " << x << endl;
+
+    x = 30;
+    cout << "ref = " << ref << "\n\n";
 
     // Memory Address
 

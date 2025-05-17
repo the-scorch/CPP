@@ -1,19 +1,13 @@
 #include <iostream>
 #include <string>
-#include <cmath>
-#include <iomanip> //For setprecision
+#include <cmath>   // for math functions
+#include <iomanip> //for setprecision
 using namespace std;
 
 int main()
 {
 
     // C++ Math Functions
-
-    cout << "10 Divided by 3, Quotient: " << (int)10 / 3 << "\n\n";
-
-    cout << "10 Divided by 3, Quotient: " << (double)10 / 3 << "\n\n";
-
-    cout << "10 Divided by 3, Remainder: " << 10 % 3 << "\n\n";
 
     cout << "Max of Two: " << max(20, 74) << "\t" << min(-2, -4) << "\n\n";
 
