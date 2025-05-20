@@ -38,18 +38,7 @@ int main()
   cout << "\n\n";
 
   int nums1[4] = {2, 5, 7, 3};
-  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int); // Size of array OR No. of array's elements
-
-  cout << "\n";
-
-  int z = nums1.size(); // No. of array's elements
-
-  for (int c = 0; c < z; c++)
-  {
-    cout << nums1[c] << "\t";
-  }
-
-  cout << "\n\n";
+  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int) << "\n\n"; // No. of array's elements
 
   // 2D Array
 

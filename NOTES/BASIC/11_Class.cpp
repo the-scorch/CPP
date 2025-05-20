@@ -74,7 +74,7 @@ public:
 
 	void display()
 	{
-		cout << name << "was released by " << company << " (" << year << ").\n";
+		cout << name << " was released by " << company << " (" << year << ").\n";
 	}
 };
 
@@ -117,39 +117,39 @@ public:
 
 // Polymorphism
 
-class Animal
+class Animal // Base class
 {
 public:
-	void sound()
+	virtual void sound() // function may be redefined in derived class
 	{
 		cout << "Animal Sound!\n";
 	}
 };
 
-class Dog : public Animal
+class Dog : public Animal // Derived Class
 {
 public:
-	void sound()
+	void sound() override
 	{
 		cout << "woof woof!\n";
 	}
 };
 
-class Cat : public Animal
+class Cat : public Animal // Derived Class
 {
 public:
-	void sound()
+	void sound() override
 	{
 		cout << "meow meow!\n";
 	}
 };
 
-class Lion : public Animal
+class Lion : public Animal // Derived Class
 {
 public:
-	void sound()
+	void sound() override
 	{
-		cout << "the roar!\n\n";
+		cout << "rooaaaarrr!\n\n";
 	}
 };
 
@@ -237,14 +237,35 @@ int main()
 	// Polymorphism
 
 	Animal myanimal;
-	Dog shepherd;
+	Dog gshepherd;
 	Cat beluga;
 	Lion sherkhan;
 
 	myanimal.sound();
-	shepherd.sound();
+	gshepherd.sound();
 	beluga.sound();
 	sherkhan.sound();
+
+    Animal* animalPtr = new Dog(); // Base class pointer to derived class object
+
+    Dog* dogPtr = dynamic_cast<Dog*>(animalPtr); // Downcasting - Base class pointer to Derived class pointer
+
+    if (dogPtr) { // check typecasting
+        dogPtr->sound();
+    }
+    else {
+        cout << "Failed to cast to Dog." << endl;
+    }
+
+    Cat* catPtr = dynamic_cast<Cat*>(animalPtr); // Typecasting to other dervied class
+    if (catPtr) {
+        catPtr->sound();
+    }
+    else {
+        cout << "Failed to cast to Cat." << endl;
+    }
+
+    delete animalPtr; // delete the allocation to avoid memory leaks
 
 	return 0;
 }

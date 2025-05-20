@@ -23,6 +23,13 @@ int main()
 
 	ReadFile.close();
 
+    ofstream errorLog("error_log.txt"); // file for logging errors
+
+    cerr.rdbuf(errorLog.rdbuf()); // Redirect cerr to the file
+    cerr << "This is an error message written to a file." << endl;
+    
+    errorLog.close();
+
 	cout << "\n\n";
 
 	// Exceptions or Errors

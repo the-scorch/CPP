@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <limits>
 using namespace std;
 
 int main()
@@ -42,13 +43,22 @@ int main()
 
      cout << txt1 << "\n\n";
 
-     // cin takes space as terminator
-
      string fullName;
      cout << "Type your Full Name: ";
-     cin.ignore();           // To ignore the newline character left in the input buffer
-     getline(cin, fullName); // take whole line as input
-     cout << "Your name is: " << fullName << "\n\n";
+     getline(cin, fullName); // take whole line as input, newline as terminator
+     cout << "Your name is: " << fullName << endl;
+
+     char pass[16];
+     cout << "Enter Password of 8 characters: ";
+     cin.read(pass, 8); // take defined no. of characters as input, space as terminator
+     cout << "Saving this Pass = " << pass << endl; // 21032005
+
+     char title[20];
+     cout << "Enter the Title: ";
+     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore the newline left in the buffer
+     cin.getline(title, 10); // same as cin.read(), newline as terminator
+     cout << "Saving this Title = " << title << endl; // THE LOSER
+     
 
      return 0;
 }
