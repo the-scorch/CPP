@@ -107,9 +107,6 @@ label1:
 
 label2:
     cout << "Odd" << endl;
-	return 0;
-label3:
-	cout << "Unspecified";
-	
+
     return 0;
 }
