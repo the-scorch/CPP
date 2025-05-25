@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 int main()
@@ -20,7 +21,16 @@ int main()
    {
       cout << b << "\t";
    } while (b < 7); // then checks the condition
-   cout << "\n\n";
+   cout << endl;
+
+   int n;
+   do
+   {
+      cout << "Enter a positive number: ";
+      cin >> n;
+   } while (n <= 0); // ensure user enters a positive number
+
+   cout << "Entered number: " << n << "\n\n";
 
    // for loop
    for (int c = 0; c < 10; c++) // initialization, condition, updation
@@ -55,7 +65,7 @@ int main()
    }
    cout << "\n\n";
 
-      for (int e = 6; e <= 8; e++) // Nested loop
+   for (int e = 6; e <= 8; e++) // Nested loop
    {
       cout << "External: " << e << "\n"; // Executes 3 times
 
@@ -66,10 +76,31 @@ int main()
    }
    cout << endl;
 
-   for(int m = 0, n = 10; m < 7; m++, n--) // Multiple variables in for loop
+   for (int m = 0, n = 10; m < 7; m++, n--) // Multiple variables in for loop
    {
       cout << "m : " << m << "\t" << "n: " << n << endl;
+   }
+   cout << endl;
 
+   // Range-based for loop
+   int nums[] = {1, 2, 3, 4, 5};
+
+   for (int i : nums)
+   {
+      cout << i << " ";
+   }
+   cout << endl;
+
+   vector<int> v = {1, 2, 3, 4, 5};
+
+   for (auto &i : v) // modify element using reference
+   {
+      i++;
+   }
+
+   for (auto i : v)
+   {
+      cout << i << " ";
    }
    cout << "\n\n";
 
