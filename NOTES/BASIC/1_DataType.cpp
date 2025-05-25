@@ -21,7 +21,7 @@ int main()
      double eradius = 6E3;        // big decimal, Scientifitic number
 
      bool codfun = true;    // as 0
-     bool smokcool = false; // or 1
+     bool smokcool = false; // as 1
 
      string myText = "Scorch"; // text
 
@@ -36,11 +36,6 @@ int main()
      auto c12 = "Ashitabh";
 
      cout << a12 << "\t" << b12 << "\t" << c12 << endl;
-
-     int p, q, r; // varaibles of same type
-     p = q = r = 10;
-
-     cout << "Same value for Multiple Varibles: " << p << ", " << q << ", " << r << "\n\n";
 
      const int minperhour = 60; // assign fixed value
      const double pi = 3.142857;
