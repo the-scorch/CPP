@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include <iomanip> // setw, setprecision...
+#include <iomanip> // set_, manipulators...
 using namespace std;
 
 int main()
@@ -38,6 +38,24 @@ int main()
 
      cout << showpoint << 42.0 << "\n\n"; // always show the decimal point (even for whole numbers)
 
+     // Boolean Manipulators
+     bool answer = true;
+
+     cout << boolalpha << "Is C++ fun? " << answer << endl; // print true/false
+     cout << noboolalpha << "Position of C++? " << answer << "\n\n"; // print 1/0
+
+     // Alignment & Sign Manipulators
+     int num = 42;
+     cout << "Left Aligned: " << left << setw(10) << num << endl;
+     cout << "Right Aligned: " << right << setw(10) << num << endl;
+     cout << "Show +ve sign: " << showpos << num << endl;
+     cout << "No +ve sign: " << noshowpos << num << "\n\n";
+
+     // Base Manipulators
+     cout << "Hexadecimal: " << hex << num << endl;
+     cout << "Decimal: " << dec << num << endl;
+     cout << "Octal: " << oct << num << "\n\n";
+
      // Input stream Modifiers
      char x, y;
 
@@ -50,12 +68,6 @@ int main()
      cin >> noskipws >> y; // don't skip whitespace
 
      cout << "x: " << x << ", y: " << y << "\n\n";
-
-     // Boolean Manipulators
-     bool answer = true;
-
-     cout << boolalpha << "Is C++ fun? " << answer << endl; // print true/false
-     cout << noboolalpha << "Position of C++? " << answer << "\n\n"; // print 1/0
 
      // Error Handling
      int n1;

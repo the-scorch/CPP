@@ -6,6 +6,7 @@ using namespace std;
 void function() // Declare Function
 {
     cout << "My First Function";
+    return; // ends the function, but can't return a value here
 }
 
 void function1(string fname = "Ashitabh", int age = 19) // Adding Parameters
