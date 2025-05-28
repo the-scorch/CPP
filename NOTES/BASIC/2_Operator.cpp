@@ -59,21 +59,5 @@ int main()
           << "\t" << (k > 9 || l < 15)                                               // One of the statements is true = 1
           << "\t" << (!(k > 9 && l < 15)) << "\t" << (!(k > 9 || l < 15)) << "\n\n"; // statement is False = 1
 
-     // C++ Math Functions
-
-     cout << "Max of Two: " << max(20, 74) << "\t" << min(-2, -4) << endl;
-
-     cout << "Square Root of 4761: " << sqrt(4761) << endl;
-
-     cout << "Rounding of 53.456: " << round(53.456) << endl;
-
-     cout << "Natural Logarithm of 9: " << log(9) << endl;
-
-     cout << "Absoulte Value of -7: " << abs(-7) << endl; // gives absolute value
-
-     double pi = 3.14159265358979323846;
-     cout << "Pi value upto 5 Decimal Places: " << fixed << setprecision(5) // for setting decimal places
-          << pi << "\n\n";
-
      return 0;
 }

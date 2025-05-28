@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    // Sort
     vector<int> nums = {2, 1, 3, 5, 4, 10, 9, 7, 8, 6};
 
     sort(nums.begin(), nums.end()); // Sort in ascending order
@@ -35,6 +36,7 @@ int main()
 
     cout << "\n\n";
 
+    //Find, Upper Bound, Min, Max
     vector<int> nums1 = {3, 6, 9, 3, 7, 3, 9, 1};
 
     auto it = find(nums1.begin(), nums1.end(), 10); // finds the given value
@@ -77,6 +79,17 @@ int main()
 
     cout << endl;
 
+    // Using Lambda Function
+    vector<int> v = {5, 1, 8, 3, 9, 2};
+
+	auto it = find_if(v.begin(), v.end(), [] (const int& a) { // to find first element that is divisible by 3
+		return a % 3 == 0;
+	});
+
+    if (it != v.end()) cout << *it;
+	else cout << "No such element";
+
+    // Copylet
     vector<char> let = {'A', 'Y', 'U', 'S', 'H'};
 
     vector<int> copylet(5); // declare a vector of 5 elements
@@ -90,11 +103,12 @@ int main()
 
     cout << endl;
 
-    vector<int> seven(7);
+    //Fill
+    vector<int> sev(7);
 
-    fill(seven.begin(), seven.end(), 7); // fill the 7 in seven vector
+    fill(sev.begin(), sev.end(), 7); // fill the 7 in seven vector
 
-    for (int i : seven)
+    for (int i : sev)
     {
         cout << i << "\t";
     }
