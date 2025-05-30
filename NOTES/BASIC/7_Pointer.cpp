@@ -33,14 +33,13 @@ int main()
     string *ptrc;
     ptrc = &vitc;
 
-    cout << vitc << "\n"
-         << &vitc << " / " << ptrc << "\n\n";
+    cout << "Value: " << vitc << endl
+         << "Address: " << ptrc << "\n\n";
 
-    cout << *ptrc << "\n"; // Dereference Operator
+    cout << *ptrc << endl; // Dereference Operator
 
     *ptrc = "C6H8O6"; // Modifying Pointer's Variable value
-
-    cout << *ptrc << " / " << vitc << "\n\n";
+    cout << vitc << "\n\n";
 
     return 0;
 }
