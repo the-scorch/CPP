@@ -30,16 +30,27 @@ int main()
 
     // Pointer
     string vitc = "Ascorbic acid";
-    string *ptrc;
-    ptrc = &vitc;
+    string vitd3 = "Cholecalciferol";
+    string *ptrv; // declaring a pointer variable
 
+    ptrv = &vitd3;
+    cout << "Value: " << vitd3 << endl
+         << "Address: " << ptrv << "\n\n";
+
+    ptrv = &vitc;
     cout << "Value: " << vitc << endl
-         << "Address: " << ptrc << "\n\n";
+         << "Address: " << ptrv << "\n\n";
 
-    cout << *ptrc << endl; // Dereference Operator
+    cout << *ptrv << endl; // Dereference Operator
 
-    *ptrc = "C6H8O6"; // Modifying Pointer's Variable value
+    *ptrv = "C6H8O6"; // Modifying variable value
     cout << vitc << "\n\n";
+
+    int *ptri; // wild pointer (undefined behavior)
+    char *ptrc = NULL; // // NULL pointer, safer
+
+    cout << "Size of pointer to int: " << sizeof(ptri) << " bytes" << endl; // size always same as per architecture
+    cout << "Size of pointer to char: " << sizeof(ptrc) << " bytes" << "\n\n";
 
     return 0;
 }
