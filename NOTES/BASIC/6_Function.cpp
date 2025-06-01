@@ -5,18 +5,18 @@
 #include <algorithm> // lambda functions
 using namespace std;
 
-void function() // Declare void type
+void function() // void type
 {
     cout << "My First Function" << "\t";
-    return; // ends the function, but can't return a value here
+    return; // can't return a value here
 }
 
-int function1() // Declare return type
+int function1() // return type
 {
     return 7; // return Values
 }
 
-int fsum(int a, int b) // Pass by value, modify the copy of value
+int fsum(int a, int b) // Pass by Value, modify the copy of value
 {
     return a + b;
 }
@@ -26,7 +26,7 @@ int fsum(int a, int b, int c) // Function Overloading
     return a + b + c;
 }
 
-void swap(string &d, string &e) // Pass by Reference, allows modify of orignal value
+void swap(string &d, string &e) // Pass by Reference , allows modify of orignal value
 {
     string f = d;
     d = e;

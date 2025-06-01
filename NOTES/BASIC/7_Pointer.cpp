@@ -6,7 +6,13 @@ using namespace std;
 
 int main()
 {
-     // Reference Variable
+     // Memory Address
+     char letter = 'z';
+     string word = "What the";
+
+     cout << &letter << "\t" << &word << "\n\n";
+
+     // Reference - preferred
      string snack = "Fast Foods";
      string &bite = snack; // connect REF -> OG variable
 
@@ -24,23 +30,20 @@ int main()
      x = 30;
      cout << "ref = " << ref << endl;
 
-     vector<int> vect{ 10, 20, 30, 40 };
+     vector<int> vect{10, 20, 30, 40};
 
-    for (int &x : vect) {
-        x = x + 5;
-    }
+     for (int &x : vect)
+     {
+          x = x + 5;
+     }
 
-    for (int x : vect) {
-        cout << x << " ";
-    }
+     for (int x : vect)
+     {
+          cout << x << " ";
+     }
+     cout << "\n\n";
 
-     // Memory Address
-     char letter = 'z';
-     string word = "What the";
-
-     cout << "\n\n" << &letter << "\t" << &word << "\n\n";
-
-     // Pointer
+     // Pointer - when required reinitialization
      string vitc = "Ascorbic acid";
      string vitd3 = "Cholecalciferol";
      string *ptrv; // declaring a pointer variable
@@ -65,13 +68,13 @@ int main()
      cout << "Size of pointer to char: " << sizeof(ptrc) << " bytes" << "\n\n";
 
      nullptr_t np1, np2; // two variables of value = nullptr
-     if (np1 >= np2)
+     if (np1 == np2)
           cout << "can compare" << endl;
      else
           cout << "can not compare" << endl;
 
-     char *x = np1;
-     if (x == nullptr)
+     char *g = np1;
+     if (g == nullptr)
           cout << "x is null" << "\n\n";
      else
           cout << "x is not null" << "\n\n";
@@ -82,6 +85,13 @@ int main()
 
      cout << *ptr1 << endl;
      cout << **ptr2 << "\n\n"; // dereferencing
+
+     int arr[3] = { 5, 10, 15 };
+
+    int (*ptr)[3] = &arr; // Pointer to array of size 3
+	
+  	for (int i = 0; i < 3; i++)
+    	printf("%d ", (*ptr)[i]);
 
      return 0;
 }
