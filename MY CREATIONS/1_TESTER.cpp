@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-   
-   cout << "Nothing to see here, move along!" << endl;
+
+   cout << "There is nothing here!" << endl;
 
 return 0;
 }
