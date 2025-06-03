@@ -86,12 +86,20 @@ int main()
      cout << *ptr1 << endl;
      cout << **ptr2 << "\n\n"; // dereferencing
 
-     int arr[3] = { 5, 10, 15 };
+     int arr[3] = {5, 10, 15};
 
-    int (*ptr)[3] = &arr; // Pointer to array of size 3
-	
-  	for (int i = 0; i < 3; i++)
-    	printf("%d ", (*ptr)[i]);
+     int *p = arr; // Pointer to first element of array
+     int (*ptr)[3] = &arr; // Pointer to array of size 3
+
+     cout << p << endl;
+     cout << ptr << endl;
+     
+     cout << *p << endl;
+     for (int i = 0; i < 3; i++)
+     {
+          cout << (*ptr)[i] << "\t";
+     }
+     cout << "\n\n";
 
      return 0;
 }
