@@ -34,11 +34,10 @@ int main()
   {
     cout << b << "\t";
   }
-
-  cout << "\n\n";
+  cout << endl;
 
   int nums1[4] = {2, 5, 7, 3};
-  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int) << "\n\n"; // No. of array's elements
+  cout << sizeof(nums1) << "\t" << sizeof(nums1)/sizeof(int) << "\n\n"; // No. of array's elements
 
   // 2D Array
 

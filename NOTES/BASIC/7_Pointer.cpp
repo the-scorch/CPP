@@ -88,8 +88,8 @@ int main()
 
      int arr[3] = {5, 10, 15};
 
-     int *p = arr; // Pointer to first element of array
-     int (*ptr)[3] = &arr; // Pointer to array of size 3
+     int *p = arr; // to first element of array
+     int (*ptr)[3] = &arr; // to array of size 3
 
      cout << p << endl;
      cout << ptr << endl;
