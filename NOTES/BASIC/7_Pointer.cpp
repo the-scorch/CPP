@@ -4,6 +4,14 @@
 #include <vector>
 using namespace std;
 
+void printar(int (&arr)[], int n) // Array by refrence in Function to prevent Array Decay
+{
+     for(int i = 0; i < n; i++)
+     {
+          cout << arr[i] << " ";
+     }
+}
+
 int main()
 {
      // Memory Address
@@ -100,6 +108,8 @@ int main()
           cout << (*ptr)[i] << "\t";
      }
      cout << "\n\n";
+
+     printar(arr, 3); // Passing array to function
 
      return 0;
 }
