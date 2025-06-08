@@ -1,13 +1,25 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <regex>
+#include <vector>
 using namespace std;
+
+vector<string> tokenize(const string str, const regex re)
+{
+     sregex_token_iterator it{str.begin(), str.end(), re, -1}; // spilts the string by regex, -1 = remove the matches, 0 = keep the matches
+     vector<string> tokenized{it, {}};
+
+     tokenized.erase(
+         remove_if(tokenized.begin(), tokenized.end(), [](string const &s)
+                   { return s.size() == 0; }), // remove empty strings
+         tokenized.end());
+
+     return tokenized;
+}
 
 int main()
 {
-
-     // C-style strings (array of characters)
-
      string greet1 = "Hey, wayd?";
      char greet2[] = "Hey, wayd?"; // Alt. method to declare string
 
@@ -48,17 +60,69 @@ int main()
      getline(cin, fullName); // take whole line as input, newline as terminator
      cout << "Your name is: " << fullName << endl;
 
-     char pass[16];
+     char pass[50];
      cout << "Enter Password of 8 characters: ";
-     cin.read(pass, 8); // take defined no. of characters as input, space as terminator
+     cin.read(pass, 8);                             // take defined no. of characters as input, space as terminator
      cout << "Saving this Pass = " << pass << endl; // 21032005
 
-     char title[20];
-     cout << "Enter the Title: ";
+     char title[50];
+     cout << "Enter Title of 10 characters: ";
      cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore the newline left in the buffer
-     cin.getline(title, 10); // same as cin.read(), newline as terminator
-     cout << "Saving this Title = " << title << endl; // THE LOSER
-     
+     cin.getline(title, 10);                              // same as cin.read(), newline as terminator
+     cout << "Saving this Title = " << title << "\n\n";   // THE LOSER
+
+     // https://www.geeksforgeeks.org/stdstring-class-in-c/
+
+     string line = "There--Are,No Accidents--~ Master,Oogway!";
+     const regex re(R"([\s|,]+|--+)");
+
+     const vector<string> tokenized = tokenize(line, re); // function call
+
+     for (string token : tokenized)
+     {
+          cout << token << endl;
+     }
+     cout << endl;
+
+     string hii = "Hello, Girl!";
+
+     string her = hii.substr(7, 4); // substring - index, size
+     cout << her << endl;
+
+     int pos = hii.find(","); // index of character's first occurrence
+
+     her = hii.substr(pos + 1); // all after character
+     cout << her << endl;
+
+     her = hii.substr(0, pos); // all before character
+     cout << her << "\n\n";
+
+     hii.replace(0, 5, "Hi"); // replace characters by index, size, string
+
+     int n = hii.length();
+     for (int i = 0; i < n; i++) // print all possible substrings
+     {
+          for (int j = 1; j <= n - i; j++)
+          {
+               cout << hii.substr(i, j) << endl;
+          }
+     }
+     cout << endl;
+
+     string nums = "1234";
+     int m = nums.length();
+     int sum = 0;
+     for (int i = 0; i < m; i++) // print sum of all possible substrings
+     {
+          for (int j = 1; j <= m - i; j++)
+          {
+               string num = nums.substr(i, j);
+
+               int num1 = stoi(num); // convert string to integer
+               sum += num1;
+          }
+     }
+     cout << "Sum of all possible substrings = " << sum << "\n\n";
 
      return 0;
 }
