@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//https://www.hackerrank.com/challenges/c-tutorial-basic-data-types/problem?isFullScreen=true
+
 int main()
 {
     int a;

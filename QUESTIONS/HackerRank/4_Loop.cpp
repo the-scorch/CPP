@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//https://www.hackerrank.com/challenges/c-tutorial-for-loop/problem?isFullScreen=true
+
 int main()
 {
     int a, b;

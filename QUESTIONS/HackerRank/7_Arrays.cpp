@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//https://www.hackerrank.com/challenges/arrays-introduction/problem?isFullScreen=true
+
 int main()
 {
     int s, i;
