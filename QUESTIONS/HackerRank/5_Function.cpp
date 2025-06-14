@@ -13,6 +13,8 @@ int main()
 {
        int a, b, c, d;
        cin >> a >> b >> c >> d;
+       
        cout << great(a, b, c, d);
+
        return 0;
 }

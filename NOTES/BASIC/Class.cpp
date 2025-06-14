@@ -78,6 +78,19 @@ public:
 	}
 };
 
+class Box {
+    int length;
+public:
+    Box(int l) : length(l) {}
+
+    Box(const Box& other) { // Copy constructor
+        length = other.length;
+        cout << "Copy constructor called!\n";
+    }
+
+    int getLength() { return length; }
+};
+
 // Inheritance
 
 class Parent1 // 1st Base Class
@@ -224,7 +237,11 @@ int main()
 	fun3.display();
 	fun4.display();
 
-	cout << "\n";
+	cout << endl;
+
+    Box b1(10);         // Normal constructor
+    Box b2 = b1;        // Copy constructor called
+    cout << b2.getLength() << "\n\n"; // Output: 10
 
 	// Using Inheritance
 

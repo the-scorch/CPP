@@ -7,6 +7,7 @@ int main()
 {
     int a, b;
     cin >> a >> b;
+
     for (int i = a; i <= b; i++)
     {
         if (i == 1)
@@ -35,5 +36,6 @@ int main()
                 cout << "odd" << endl;
         }
     }
+    
     return 0;
 }

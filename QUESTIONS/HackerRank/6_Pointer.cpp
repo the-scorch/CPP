@@ -14,8 +14,10 @@ int main()
 {
     int a, b;
     cin >> a >> b;
+
     fun(&a, &b);
     cout << a << endl
          << b;
+
     return 0;
 }

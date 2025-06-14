@@ -7,6 +7,7 @@ int main()
 {
     int n;
     cin >> n;
+
     if (n == 1)
         cout << "one";
     else if (n == 2)
@@ -27,5 +28,6 @@ int main()
         cout << "nine";
     else
         cout << "Greater than 9";
+        
     return 0;
 }
