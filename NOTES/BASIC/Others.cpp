@@ -1,6 +1,6 @@
 #include <iostream>
-#include <fstream> // for operations on file
 #include <string>
+#include <fstream> // for operations on file
 using namespace std;
 
 int main()

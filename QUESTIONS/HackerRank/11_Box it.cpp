@@ -47,9 +47,13 @@ class Box
     // Overload the < operator
     bool operator<(const Box& other) const {
         // Compare this box with another box
-        if (l < other.l) return true;
-        if (l == other.l && b < other.b) return true;
-        if (l == other.l && b == other.b && h < other.h) return true;
+        if (l < other.l)
+        return true;
+        else if (l == other.l && b < other.b)
+        return true;
+        else if (l == other.l && b == other.b && h < other.h)
+        return true;
+        else
         return false;
     }
     
