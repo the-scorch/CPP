@@ -44,8 +44,7 @@ class Box
         return vol;
     }
     
-    // Overload the < operator
-    bool operator<(const Box& other) const {
+    bool operator<(const Box& other) const {     // Overload the < operator
         // Compare this box with another box
         if (l < other.l)
         return true;
@@ -57,8 +56,7 @@ class Box
         return false;
     }
     
-    // Friend function to overload <<
-    friend ostream& operator<<(ostream& out, const Box& B) {
+    friend ostream& operator<<(ostream& out, const Box& B) {     // Friend function to overload <<
         out << B.l << " " << B.b << " " << B.h;
         return out;
     }

@@ -6,18 +6,18 @@ using namespace std;
 
 int main()
 {
-    char b;
+    char ask;
     do
     {
-        cout << "\n\tWelcome to Tradulator!!\n\n";
+        cout << "\n\tWelcome to TRADULATOR!!\n\n";
 
-        double i;
-        cout << "Enter the Buy Value: ₹";
-        cin >> i;
+        double buy;
+        cout << "Enter Buy Value: ";
+        cin >> buy;
 
-        double s;
-        cout << "Enter the Sell Value: ₹";
-        cin >> s;
+        double sell;
+        cout << "Enter Sell Value: ";
+        cin >> sell;
 
         // string ptf;
         // cout << "Type the Trading Platform: ";
@@ -26,30 +26,30 @@ int main()
 
         // if (ptf == "IND Money" || ptf == "Groww")
         // {
-        const double c = 0; // Charges
-        c += 0.0012 * s;    // Others
+        double c = 0; // Charges
+        c += 0.0012 * sell;    // Others
         c += 20;            // Brokerage
         c += 18.5;          // DP
         c += 0.18 * c;      // GST on Charges
 
-        cout << "\nCharges = ₹" << c;
+        cout << "\nCharges = " << c;
 
-        double a = s - c;
-        cout << "\n\n\tNet Amount = ₹" << a;
+        double a = sell - c;
+        cout << "\n\n\tNet Amount = " << a;
 
-        double p = a - i;
-        cout << "\n\n\tProfit = ₹" << p;
+        double p = a - buy;
+        cout << "\n\n\tProfit = " << p;
 
         double t = 0.15 * p; // Short-Term CG Tax of India
-        cout << "\n\nTaxes = ₹" << t;
+        cout << "\n\nTaxes = " << t;
 
         cout << fixed << setprecision(2);
-        cout << "\n\n\tNet Profit = ₹" << p - t << "\n\n";
+        cout << "\n\n\tNet Profit = " << p - t << "\n\n";
 
         cout << "Re-Evaluate?? (y/n): ";
-        cin >> b;
+        cin >> ask;
         // }
-    } while (b == 'y' || b == 'Y');
+    } while (ask == 'y' || ask == 'Y');
 
     return 0;
 }
