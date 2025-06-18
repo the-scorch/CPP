@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    char ask;
+    char choice;
     do
     {
         cout << "\n\tWelcome to TRADULATOR!!\n\n";
@@ -15,19 +15,19 @@ int main()
         cout << "Enter Buy Value: ";
         cin >> buy;
 
-        char ask1;
+        char ask;
         cout << "%Profit or Sell Value?? (p/s): ";
-        cin >> ask1;
+        cin >> ask;
 
         double sell;
-        if(ask1 == 'p')
+        if( ask == 'p')
         {
         double p;
         cout << "Enter the %Profit: ";
         cin >> p;
         sell = buy + ((p/100) * buy);
         }
-        else if(ask1 == 's')
+        else if(ask == 's')
         {
         cout << "Enter Sell Value: ";
         cin >> sell;
@@ -61,9 +61,9 @@ int main()
         cout << "\n\n\tNet Profit = " << pr - t << "\n\n";
 
         cout << "Re-Evaluate?? (y/n): ";
-        cin >> ask;
+        cin >> choice;
         // }
-    } while (ask == 'y' || ask == 'Y');
+    } while (choice == 'y' || choice == 'Y');
 
     return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    char ask;
+    char choice;
     do
     {
         cout << "\n\tWelcome to TRADULATOR V2! (Min Sell Edition)\n\n";
@@ -62,9 +62,9 @@ int main()
         cout << "\n%Move = " << ((minsell - buy) / buy)*100;
 
         cout << "\n\nRe-Evaluate?? (y/n): ";
-        cin >> ask;
+        cin >> choice;
         // }
-    } while (ask == 'y' || ask == 'Y');
+    } while (choice == 'y' || choice == 'Y');
 
     return 0;
 }
