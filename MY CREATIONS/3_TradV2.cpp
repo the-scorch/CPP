@@ -59,7 +59,7 @@ int main()
         cout << fixed << setprecision(2);
         cout << "\nMin Sell Value = " << minsell;
 
-        cout << "\n%Move = " << ((minsell - buy) / minsell)*100;
+        cout << "\n%Move = " << ((minsell - buy) / buy)*100;
 
         cout << "\n\nRe-Evaluate?? (y/n): ";
         cin >> ask;

@@ -15,9 +15,23 @@ int main()
         cout << "Enter Buy Value: ";
         cin >> buy;
 
+        char ask1;
+        cout << "%Profit or Sell Value?? (p/s): ";
+        cin >> ask1;
+
         double sell;
+        if(ask1 == 'p')
+        {
+        double p;
+        cout << "Enter the %Profit: ";
+        cin >> p;
+        sell = buy + ((p/100) * buy);
+        }
+        else if(ask1 == 's')
+        {
         cout << "Enter Sell Value: ";
         cin >> sell;
+        }
 
         // string ptf;
         // cout << "Type the Trading Platform: ";
@@ -37,14 +51,14 @@ int main()
         double a = sell - c;
         cout << "\n\n\tNet Amount = " << a;
 
-        double p = a - buy;
-        cout << "\n\n\tProfit = " << p;
+        double pr = a - buy;
+        cout << "\n\n\tProfit = " << pr;
 
-        double t = 0.15 * p; // Short-Term CG Tax of India
+        double t = 0.15 * pr; // Short-Term CG Tax of India
         cout << "\n\nTaxes = " << t;
 
         cout << fixed << setprecision(2);
-        cout << "\n\n\tNet Profit = " << p - t << "\n\n";
+        cout << "\n\n\tNet Profit = " << pr - t << "\n\n";
 
         cout << "Re-Evaluate?? (y/n): ";
         cin >> ask;
