@@ -60,6 +60,12 @@ int main()
         cout << fixed << setprecision(2);
         cout << "\n\n\tNet Profit = " << pr - t << "\n\n";
 
+        double ans = pr - t;
+        if(ans > 50)
+        {
+            cout << "You can Sell It!" << "\n\n";
+        }
+
         cout << "Re-Evaluate?? (y/n): ";
         cin >> choice;
         // }

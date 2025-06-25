@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std;
 
-struct S // Structure - used to group different data types
+struct S // used to group different data types
 {
     int nums2;    // Member 1
     string words; // Member 2
