@@ -20,17 +20,17 @@ int main()
         cin >> ask;
 
         double sell;
-        if( ask == 'p')
+        if (ask == 'p')
         {
-        double p;
-        cout << "Enter the %Profit: ";
-        cin >> p;
-        sell = buy + ((p/100) * buy);
+            double p;
+            cout << "Enter the %Profit: ";
+            cin >> p;
+            sell = buy + ((p / 100) * buy);
         }
-        else if(ask == 's')
+        else if (ask == 's')
         {
-        cout << "Enter Sell Value: ";
-        cin >> sell;
+            cout << "Enter Sell Value: ";
+            cin >> sell;
         }
 
         // string ptf;
@@ -40,31 +40,29 @@ int main()
 
         // if (ptf == "IND Money" || ptf == "Groww")
         // {
-        double c = 0; // Charges
-        c += 0.0012 * sell;    // Others
-        c += 20;            // Brokerage
-        c += 18.5;          // DP
-        c += 0.18 * c;      // GST on Charges
-
+        double stt = 0.001 * sell;                              // STT on sell value
+        double exchangeFee = 0.0000325 * (buy + sell);          // Exchange fee on turnover
+        double sebiFee = 0.000002 * (buy + sell);               // SEBI fee on turnover
+        double dpCharge = 18.25;                                // DP charge per sell
+        double gst = 0.18 * (exchangeFee + sebiFee + dpCharge); // GST 18% on exch+sebi+DP
+        double c = (stt + exchangeFee + sebiFee + dpCharge + gst);
+        cout << fixed << setprecision(2);
         cout << "\nCharges = " << c;
 
         double a = sell - c;
+        cout << fixed << setprecision(2);
         cout << "\n\n\tNet Amount = " << a;
 
         double pr = a - buy;
+        cout << fixed << setprecision(2);
         cout << "\n\n\tProfit = " << pr;
 
-        double t = 0.15 * pr; // Short-Term CG Tax of India
+        double t = (0.15 * pr) + (0.04 * (0.15 * pr)); // STCG Tax + Cess | Welcome to INDIA : )
+        cout << fixed << setprecision(2);
         cout << "\n\nTaxes = " << t;
 
         cout << fixed << setprecision(2);
-        cout << "\n\n\tNet Profit = " << pr - t << "\n\n";
-
-        double ans = pr - t;
-        if(ans > 50)
-        {
-            cout << "You can Sell It!" << "\n\n";
-        }
+        cout << "\n\n\tNet Profit = " << pr - t - 10 << "\n\n";
 
         cout << "Re-Evaluate?? (y/n): ";
         cin >> choice;

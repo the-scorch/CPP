@@ -34,11 +34,12 @@ int main()
         {
             double mid = (high + low) / 2;
             
-            double c = 0;
-            c += 0.0012 * mid;
-            c += 20;
-            c += 18.5;
-            c += 0.18 * c;
+        double stt = 0.001 * mid;                              // STT on sell value
+        double exchangeFee = 0.0000325 * (buy + mid);          // Exchange fee on turnover
+        double sebiFee = 0.000002 * (buy + mid);               // SEBI fee on turnover
+        double dpCharge = 18.25;                                // DP charge per sell
+        double gst = 0.18 * (exchangeFee + sebiFee + dpCharge); // GST 18% on exch+sebi+DP
+        double c = (stt + exchangeFee + sebiFee + dpCharge + gst);
 
             double a = mid - c;
             double p = a - buy;
