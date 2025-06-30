@@ -62,7 +62,7 @@ int main()
         cout << "\n\nTaxes = " << t;
 
         cout << fixed << setprecision(2);
-        cout << "\n\n\tNet Profit = " << pr - t - 10 << "\n\n";
+        cout << "\n\n\tNet Profit = " << pr - t << "\n\n";
 
         cout << "Re-Evaluate?? (y/n): ";
         cin >> choice;
