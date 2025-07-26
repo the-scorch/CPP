@@ -82,12 +82,12 @@ int main()
     // Using Lambda Function
     vector<int> v = {5, 1, 8, 3, 9, 2};
 
-	auto it = find_if(v.begin(), v.end(), [] (const int& a) { // to find first element that is divisible by 3
+	auto it4 = find_if(v.begin(), v.end(), [] (const int& a) { // to find first element that is divisible by 3
 		return a % 3 == 0;
 	});
 
-    if (it != v.end()) cout << *it;
-	else cout << "No such element";
+    if (it4 != v.end()) cout << *it4 << endl;
+	else cout << "No such element" << endl;
 
     // Copylet
     vector<char> let = {'A', 'Y', 'U', 'S', 'H'};
