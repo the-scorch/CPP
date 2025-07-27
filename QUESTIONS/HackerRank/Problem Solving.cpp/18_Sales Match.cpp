@@ -1,43 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/the-birthday-bar/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/sock-merchant/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'birthday' function below.
+ * Complete the 'sockMerchant' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER_ARRAY s
- *  2. INTEGER d
- *  3. INTEGER m
+ *  1. INTEGER n
+ *  2. INTEGER_ARRAY ar
  */
 
-int birthday(vector<int> s, int d, int m)
+int sockMerchant(int n, vector<int> ar)
 {
-    int ndiv = 0;
-
-    int lim = s.size() - m;
-    for (long unsigned int i = 0; i <= lim; i++)
+    map<int, int> freq;
+    for (int sc : ar)
     {
-        int sum = s.at(i);
-
-        for (int j = i + 1; j <= i + m - 1; j++)
-        {
-            sum += s.at(j);
-        }
-
-        if (sum == d)
-        {
-            ndiv++;
-        }
+        freq[sc]++;
     }
 
-    return ndiv;
+    int npairs = 0;
+    for (auto f : freq)
+    {
+        npairs += f.second / 2;
+    }
+
+    return npairs;
 }
 
 int main()
@@ -49,30 +42,21 @@ int main()
 
     int n = stoi(ltrim(rtrim(n_temp)));
 
-    string s_temp_temp;
-    getline(cin, s_temp_temp);
+    string ar_temp_temp;
+    getline(cin, ar_temp_temp);
 
-    vector<string> s_temp = split(rtrim(s_temp_temp));
+    vector<string> ar_temp = split(rtrim(ar_temp_temp));
 
-    vector<int> s(n);
+    vector<int> ar(n);
 
     for (int i = 0; i < n; i++)
     {
-        int s_item = stoi(s_temp[i]);
+        int ar_item = stoi(ar_temp[i]);
 
-        s[i] = s_item;
+        ar[i] = ar_item;
     }
 
-    string first_multiple_input_temp;
-    getline(cin, first_multiple_input_temp);
-
-    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
-
-    int d = stoi(first_multiple_input[0]);
-
-    int m = stoi(first_multiple_input[1]);
-
-    int result = birthday(s, d, m);
+    int result = sockMerchant(n, ar);
 
     fout << result << "\n";
 
