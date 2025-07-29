@@ -1,63 +1,70 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/designer-pdf-viewer/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'designerPdfViewer' function below.
+ * Complete the 'compareTriplets' function below.
  *
- * The function is expected to return an INTEGER.
+ * The function is expected to return an INTEGER_ARRAY.
  * The function accepts following parameters:
- *  1. INTEGER_ARRAY h
- *  2. STRING word
+ *  1. INTEGER_ARRAY a
+ *  2. INTEGER_ARRAY b
  */
 
-int designerPdfViewer(vector<int> h, string word)
+vector<int> compareTriplets(vector<int> a, vector<int> b)
 {
-    int rarea;
-    int maxh = 0, lnum = word.length();
-
-    for (int i = 0; i < word.length(); i++)
-    {
-        char letter = word[i];
-        int ascii = letter;
-        int index = ascii - 97;
-        int height = h[index];
-        maxh = max(maxh, height);
-    }
-    rarea = maxh * lnum;
-
-    return rarea;
 }
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string h_temp_temp;
-    getline(cin, h_temp_temp);
+    string a_temp_temp;
+    getline(cin, a_temp_temp);
 
-    vector<string> h_temp = split(rtrim(h_temp_temp));
+    vector<string> a_temp = split(rtrim(a_temp_temp));
 
-    vector<int> h(26);
+    vector<int> a(3);
 
-    for (int i = 0; i < 26; i++)
+    for (int i = 0; i < 3; i++)
     {
-        int h_item = stoi(h_temp[i]);
+        int a_item = stoi(a_temp[i]);
 
-        h[i] = h_item;
+        a[i] = a_item;
     }
 
-    string word;
-    getline(cin, word);
+    string b_temp_temp;
+    getline(cin, b_temp_temp);
 
-    int result = designerPdfViewer(h, word);
+    vector<string> b_temp = split(rtrim(b_temp_temp));
 
-    fout << result << "\n";
+    vector<int> b(3);
+
+    for (int i = 0; i < 3; i++)
+    {
+        int b_item = stoi(b_temp[i]);
+
+        b[i] = b_item;
+    }
+
+    vector<int> result = compareTriplets(a, b);
+
+    for (size_t i = 0; i < result.size(); i++)
+    {
+        fout << result[i];
+
+        if (i != result.size() - 1)
+        {
+            fout << " ";
+        }
+    }
+
+    fout << "\n";
 
     fout.close();
 

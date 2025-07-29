@@ -1,64 +1,68 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/the-hurdle-race/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'hurdleRace' function below.
+ * Complete the 'birthdayCakeCandles' function below.
  *
  * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY height
+ * The function accepts INTEGER_ARRAY candles as parameter.
  */
 
-int hurdleRace(int k, vector<int> height)
+int birthdayCakeCandles(vector<int> candles)
 {
-    int mindose = 0;
 
-    sort(height.rbegin(), height.rend());
-    int maxheight = height[0];
-
-    if (maxheight > k)
+    int i = 0;
+    int talc = candles[0];
+    for (i = 1; i < candles.size(); i++)
     {
-        mindose = maxheight - k;
+        if (talc < candles[i])
+        {
+            talc = candles[i];
+        }
     }
 
-    return mindose;
+    int noc = 0;
+    for (int j = 0; j < candles.size(); j++)
+    {
+        if (candles[j] == talc)
+        {
+            noc += 1;
+        }
+    }
+
+    return noc;
 }
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string first_multiple_input_temp;
-    getline(cin, first_multiple_input_temp);
+    string candles_count_temp;
+    getline(cin, candles_count_temp);
 
-    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+    int candles_count = stoi(ltrim(rtrim(candles_count_temp)));
 
-    int n = stoi(first_multiple_input[0]);
+    string candles_temp_temp;
+    getline(cin, candles_temp_temp);
 
-    int k = stoi(first_multiple_input[1]);
+    vector<string> candles_temp = split(rtrim(candles_temp_temp));
 
-    string height_temp_temp;
-    getline(cin, height_temp_temp);
+    vector<int> candles(candles_count);
 
-    vector<string> height_temp = split(rtrim(height_temp_temp));
-
-    vector<int> height(n);
-
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < candles_count; i++)
     {
-        int height_item = stoi(height_temp[i]);
+        int candles_item = stoi(candles_temp[i]);
 
-        height[i] = height_item;
+        candles[i] = candles_item;
     }
 
-    int result = hurdleRace(k, height);
+    int result = birthdayCakeCandles(candles);
 
     fout << result << "\n";
 

@@ -1,64 +1,71 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/the-hurdle-race/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'hurdleRace' function below.
+ * Complete the 'diagonalDifference' function below.
  *
  * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY height
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
  */
 
-int hurdleRace(int k, vector<int> height)
+int diagonalDifference(vector<vector<int>> arr)
 {
-    int mindose = 0;
 
-    sort(height.rbegin(), height.rend());
-    int maxheight = height[0];
+    int first = 0;
+    int second = 0;
+    int n = arr.size();
 
-    if (maxheight > k)
+    for (int i = 0; i < n; i++)
     {
-        mindose = maxheight - k;
+        first += arr[i][i];
     }
 
-    return mindose;
+    for (int j = n - 1, i = 0; j >= 0, i < n; j--, i++)
+    {
+        second += arr[i][j];
+    }
+
+    int answer = first - second;
+    int outputt = abs(answer);
+
+    return outputt;
 }
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string first_multiple_input_temp;
-    getline(cin, first_multiple_input_temp);
+    string n_temp;
+    getline(cin, n_temp);
 
-    vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
+    int n = stoi(ltrim(rtrim(n_temp)));
 
-    int n = stoi(first_multiple_input[0]);
-
-    int k = stoi(first_multiple_input[1]);
-
-    string height_temp_temp;
-    getline(cin, height_temp_temp);
-
-    vector<string> height_temp = split(rtrim(height_temp_temp));
-
-    vector<int> height(n);
+    vector<vector<int>> arr(n);
 
     for (int i = 0; i < n; i++)
     {
-        int height_item = stoi(height_temp[i]);
+        arr[i].resize(n);
 
-        height[i] = height_item;
+        string arr_row_temp_temp;
+        getline(cin, arr_row_temp_temp);
+
+        vector<string> arr_row_temp = split(rtrim(arr_row_temp_temp));
+
+        for (int j = 0; j < n; j++)
+        {
+            int arr_row_item = stoi(arr_row_temp[j]);
+
+            arr[i][j] = arr_row_item;
+        }
     }
 
-    int result = hurdleRace(k, height);
+    int result = diagonalDifference(arr);
 
     fout << result << "\n";
 

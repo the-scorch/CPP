@@ -1,61 +1,56 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/designer-pdf-viewer/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/a-very-big-sum/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'designerPdfViewer' function below.
+ * Complete the 'aVeryBigSum' function below.
  *
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY h
- *  2. STRING word
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts LONG_INTEGER_ARRAY ar as parameter.
  */
 
-int designerPdfViewer(vector<int> h, string word)
+long aVeryBigSum(vector<long> ar)
 {
-    int rarea;
-    int maxh = 0, lnum = word.length();
 
-    for (int i = 0; i < word.length(); i++)
+    long unsigned iz = 0;
+    long unsigned total = 0;
+    for (iz; iz < ar.size(); iz++)
     {
-        char letter = word[i];
-        int ascii = letter;
-        int index = ascii - 97;
-        int height = h[index];
-        maxh = max(maxh, height);
+        total += ar[iz];
     }
-    rarea = maxh * lnum;
 
-    return rarea;
+    return total;
 }
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string h_temp_temp;
-    getline(cin, h_temp_temp);
+    string ar_count_temp;
+    getline(cin, ar_count_temp);
 
-    vector<string> h_temp = split(rtrim(h_temp_temp));
+    int ar_count = stoi(ltrim(rtrim(ar_count_temp)));
 
-    vector<int> h(26);
+    string ar_temp_temp;
+    getline(cin, ar_temp_temp);
 
-    for (int i = 0; i < 26; i++)
+    vector<string> ar_temp = split(rtrim(ar_temp_temp));
+
+    vector<long> ar(ar_count);
+
+    for (int i = 0; i < ar_count; i++)
     {
-        int h_item = stoi(h_temp[i]);
+        long ar_item = stol(ar_temp[i]);
 
-        h[i] = h_item;
+        ar[i] = ar_item;
     }
 
-    string word;
-    getline(cin, word);
-
-    int result = designerPdfViewer(h, word);
+    long result = aVeryBigSum(ar);
 
     fout << result << "\n";
 

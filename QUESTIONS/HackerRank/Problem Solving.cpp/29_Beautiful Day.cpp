@@ -1,34 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// https://www.hackerrank.com/challenges/the-hurdle-race/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem?isFullScreen=true
 
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'hurdleRace' function below.
+ * Complete the 'beautifulDays' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY height
+ *  1. INTEGER i
+ *  2. INTEGER j
+ *  3. INTEGER k
  */
 
-int hurdleRace(int k, vector<int> height)
+int beautifulDays(int i, int j, int k)
 {
-    int mindose = 0;
+    int beautdays = 0;
 
-    sort(height.rbegin(), height.rend());
-    int maxheight = height[0];
-
-    if (maxheight > k)
+    for (int x = i; x <= j; x++)
     {
-        mindose = maxheight - k;
+        int day = x;
+
+        int rev = 0, r = 0;
+        while (day != 0)
+        {
+            r = day % 10;
+            rev = rev * 10 + r;
+            day = day / 10;
+        }
+
+        int diff = abs(x - rev);
+        if (diff % k == 0)
+        {
+            beautdays++;
+        }
     }
 
-    return mindose;
+    return beautdays;
 }
 
 int main()
@@ -40,25 +52,13 @@ int main()
 
     vector<string> first_multiple_input = split(rtrim(first_multiple_input_temp));
 
-    int n = stoi(first_multiple_input[0]);
+    int i = stoi(first_multiple_input[0]);
 
-    int k = stoi(first_multiple_input[1]);
+    int j = stoi(first_multiple_input[1]);
 
-    string height_temp_temp;
-    getline(cin, height_temp_temp);
+    int k = stoi(first_multiple_input[2]);
 
-    vector<string> height_temp = split(rtrim(height_temp_temp));
-
-    vector<int> height(n);
-
-    for (int i = 0; i < n; i++)
-    {
-        int height_item = stoi(height_temp[i]);
-
-        height[i] = height_item;
-    }
-
-    int result = hurdleRace(k, height);
+    int result = beautifulDays(i, j, k);
 
     fout << result << "\n";
 
