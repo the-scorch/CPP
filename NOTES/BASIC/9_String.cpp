@@ -98,8 +98,8 @@ int main()
      cout << her << "\n\n";
 
      hii.replace(0, 5, "Hi"); // replace characters by index, size, string
-
      int n = hii.length();
+     
      for (int i = 0; i < n; i++) // print all possible substrings
      {
           for (int j = 1; j <= n - i; j++)
