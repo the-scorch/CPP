@@ -3,6 +3,11 @@ using namespace std;
 
 int main()
 {
-   
-   return 0;
+   int x = 10;
+   {
+      int x = 20;
+      cout << "Inner x : " << x << endl;
+   }
+   cout << "Outer x : " << x;
+return 0;
 }
