@@ -1,54 +1,49 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-  // We put "1" to indicate there is a ship.
+int main()
+{
+  // 1 indicates there is a ship
   bool ships[4][4] = {
-    { 0, 1, 1, 0 },
-    { 0, 0, 0, 0 },
-    { 0, 0, 1, 0 },
-    { 0, 0, 1, 0 }
-  };
+      {0, 1, 1, 0},
+      {0, 0, 0, 0},
+      {1, 0, 1, 0},
+      {0, 0, 1, 0}};
 
-  // Keep track of how many hits the player has and how many turns they have played in these variables
+  // Tracking total hits the player has and how many turns they played
   int hits = 0;
   int numberOfTurns = 0;
 
-  // Allow the player to keep going until they have hit all four ships
-  while (hits < 4) {
+  // Allows player to play until they hit all ships
+  while (hits < 4)
+  {
     int row, column;
-
     cout << "Selecting coordinates\n";
 
-    // Ask the player for a row
     cout << "Choose a row number between 0 and 3: ";
     cin >> row;
-
-    // Ask the player for a column
     cout << "Choose a column number between 0 and 3: ";
     cin >> column;
 
-    // Check if a ship exists in those coordinates
-    if (ships[row][column]) {
-      // If the player hit a ship, remove it by setting the value to zero.
+    // Tell the player that they hit a ship
+    if (ships[row][column])
+    {
       ships[row][column] = 0;
+      hits++;                                        // Increase the hit counter
+      cout << "Hit! " << (5 - hits) << " left.\n\n"; // how many ships are left
+    }
 
-      // Increase the hit counter
-      hits++;
-
-      // Tell the player that they have hit a ship and how many ships are left
-      cout << "Hit! " << (4-hits) << " left.\n\n";
-    } else {
-      // Tell the player that they missed
+    // Tell the player that they missed
+    else
+    {
       cout << "Miss\n\n";
     }
 
-    // Count how many turns the player has taken
-    numberOfTurns++;
+    numberOfTurns++; // Count how many turns the player has taken
   }
 
   cout << "Victory!\n";
   cout << "You won in " << numberOfTurns << " turns";
-  
+
   return 0;
 }
