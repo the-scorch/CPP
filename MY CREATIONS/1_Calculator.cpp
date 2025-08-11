@@ -8,7 +8,7 @@ int main()
     char choice;
     do
     {
-        cout << "\tSelf-Made Calculator\n\n";
+        cout << "\tSimple Calculator\n\n";
 
         double a, b;
         char op;

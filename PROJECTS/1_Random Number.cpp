@@ -6,31 +6,74 @@ using namespace std;
 int main()
 {
     char choice;
-
-    cout << "\nDo you want a Random Number from 1 to 10? (y/n): ";
+    cout << "\nWant a Random Number in 0-9? (y/n): ";
     cin >> choice;
-    cout << endl;
 
     if (choice == 'y' || choice == 'Y')
     {
+        srand(time(0)); // Different No. each time the program runs
         do
         {
-            srand(time(0)); // Different No. each time the program runs
-
-            int randomnum = rand() % 11; // between 0 and 10
+            int randomnum = rand() % 10; // for range of 0 and 9
 
             cout << randomnum;
+            switch (randomnum)
+            {
+            case 1:
+                cout << " | Unity";
+                break;
 
-            cout << "\nDo you want to Repeat? (y/n): ";
+            case 2:
+                cout << " | Bi";
+                break;
+
+            case 3:
+                cout << " | Tri";
+                break;
+
+            case 4:
+                cout << " | Quad";
+                break;
+
+            case 5:
+                cout << " | Penta";
+                break;
+
+            case 6:
+                cout << " | Hexa";
+                break;
+
+            case 7:
+                cout << " | Hepta";
+                break;
+
+            case 8:
+                cout << " | Octa";
+                break;
+
+            case 9:
+                cout << " | Nona";
+                break;
+
+            default:
+                cout << " | Null";
+                break;
+            }
+
+            cout << "\nWant a Number again? (y/n): ";
             cin >> choice;
-            cout << endl;
 
         } while (choice == 'y' || choice == 'Y');
+
+        if (choice == 'n' || choice == 'N')
+        {
+            cout << "\n\tSee you..thanks for using My program :)" << endl;
+        }
     }
 
     else
     {
-        cout << "Then, What are You doing here!?";
+        cout << "\n\tTHE END";
     }
 
     return 0;
