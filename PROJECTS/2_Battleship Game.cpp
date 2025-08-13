@@ -14,12 +14,15 @@ int main()
   int shots = 0; // shots took to finish
 
   cout << "\nTUTORIAL: \n"
-       << "=> You are a Pirate Captain! And there are 25 blocks in Sea.\nOnly 9 of them have the SHIP, and rest are EMPTY.\nGuess the block & FIRE cannons to destroy all ships to WIN the game.\n\n";
+       << "=> You are a Pirate Captain! And there are 25 blocks in Sea.\nOnly 9 of them have the SHIP, and rest are EMPTY.\n"
+       << "Guess the block & FIRE cannons to destroy all ships to WIN the game.\n\n";
 
   cout << "\t  1  2  3  4  5" << "\n\t  __ __ __ __ __";
-  for(int i=0; i<5; i++){
-    cout << "\n\t" << i+1;
-    for(int j=0; j<5; j++){
+  for (int i = 0; i < 5; i++)
+  {
+    cout << "\n\t" << i + 1;
+    for (int j = 0; j < 5; j++)
+    {
       cout << "|__";
     }
     cout << "|";
@@ -39,14 +42,14 @@ int main()
       cout << "Choose the Column (1-5): ";
       cin >> column;
 
-      if (ships[row-1][column-1]) // if hits the ship
+      if (ships[row - 1][column - 1]) // if hits the ship
       {
-        ships[row-1][column-1] = 0;
+        ships[row - 1][column - 1] = 0;
         hits++;
         cout << "\nBull's Eye! " << (9 - hits) << " ships left.\n";
       }
 
-      else if(!(ships[row-1][column-1])) // if missed
+      else if (!(ships[row - 1][column - 1])) // if missed
       {
         cout << "\nEmpty! Try Again..\n";
       }
@@ -58,19 +61,19 @@ int main()
     switch (shots)
     {
     case 9:
-    cout << "You are a Legend!";  
+      cout << "You are a Legend!";
       break;
-    
+
     case 10:
-    cout << "You are an Expert!";  
+      cout << "You are an Expert!";
       break;
 
     case 11:
-    cout << "You are a Pro!";  
+      cout << "You are a Pro!";
       break;
-    
+
     default:
-    cout << "You are a Rookie!";
+      cout << "You are a Rookie!";
       break;
     }
   }

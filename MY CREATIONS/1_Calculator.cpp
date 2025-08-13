@@ -8,68 +8,79 @@ int main()
     char choice;
     do
     {
-        cout << "\tSimple Calculator\n\n";
+        cout << "\n\tSimple Calculator\n\n";
 
         double a, b;
         char op;
         cout << "Enter Value1[Operator]Value2: ";
         cin >> a >> op >> b;
+
         char ask;
-        int c;
-
-        switch (op)
+        do
         {
-        case '+':
-                cout << fixed << setprecision(2) << "Sum = " << a + b << endl;
-                cout << "Want to Add More in this?? (y/n) : ";
-                cin >> ask;
-                if(ask == 'y')
-                cout << "Enter Value3: ";
-                cin >> c;
-                cout << fixed << setprecision(2) << "Sum = " << a + b + c << endl;
-            break;
-
-        case '-':
-            cout << fixed << setprecision(2) << "Difference = " << a - b << endl;
-            break;
-
-        case '*':
-            cout << fixed << setprecision(2) << "Product = " << a * b << endl;
-            break;
-
-        case '/':
-            if (b != 0)
+            if (ask == 'y' || ask == 'Y')
             {
-                cout << fixed << setprecision(2) << "Quotient = " << a / b << endl;
+                cout << "Enter [Operator]Value2: ";
+                cin >> op >> b;
             }
-            else
+
+            switch (op)
             {
-                cout << "Error: Undefined!" << endl;
+            case '+':
+                cout << fixed << setprecision(2) << "\tSum = " << a + b << endl;
+                a = a + b;
+                break;
+
+            case '-':
+                cout << fixed << setprecision(2) << "\tDifference = " << a - b << endl;
+                a = a - b;
+                break;
+
+            case '*':
+                cout << fixed << setprecision(2) << "\tProduct = " << a * b << endl;
+                a = a * b;
+                break;
+
+            case '/':
+                if (b != 0)
+                {
+                    cout << fixed << setprecision(2) << "\tQuotient = " << a / b << endl;
+                    a = a / b;
+                }
+                else
+                {
+                    cout << "\tError: Undefined!" << endl;
+                }
+                break;
+
+            case '%':
+                if (b != 0)
+                {
+                    cout << fixed << setprecision(2) << "\tRemainder = " << int(a) % int(b) << endl;
+                    a = int(a) % int(b);
+                }
+                else
+                {
+                    cout << "\tError: Undefined!" << endl;
+                }
+                break;
+
+            case '^':
+                cout << fixed << setprecision(2) << "\tResult = " << pow(a, b) << endl;
+                a = pow(a, b);
+                break;
+
+            default:
+                cout << "\tError: Invalid operator!" << endl;
             }
-            break;
 
-        case '%':
-            if (b != 0)
-            {
-                cout << fixed << setprecision(2) << "Remainder = " << int(a) % int(b) << endl;
-            }
-            else
-            {
-                cout << "Error: Undefined!" << endl;
-            }
-            break;
+            cout << "\nWant to Calculate More with this? (y/n): ";
+            cin >> ask;
 
-        case '^':
-            cout << fixed << setprecision(2) << "Result = " << pow(a, b) << endl;
-            break;
+        } while (ask == 'y' || ask == 'Y');
 
-        default:
-            cout << "Error: Invalid operator!" << endl;
-        }
-
-        cout << "\nDo you want to Calculate again? (y/n): ";
+        cout << "\nWant to Calculate again? (y/n): ";
         cin >> choice;
-        cout << endl;
 
     } while (choice == 'y' || choice == 'Y');
 
