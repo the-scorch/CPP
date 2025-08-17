@@ -2,17 +2,17 @@
 #include <string>
 using namespace std;
 
-enum Level // Enumeration - define a set of named integer constants
+enum Level // group a named integer constants
 {
     LOW = 1,
-    MEDIUM,
-    HIGH,
-    LETHAL
+    MEDIUM = 2,
+    HIGH = 3,
+    LETHAL = 4
 };
 
 int main()
 {
-    enum Level var = MEDIUM; // Enum Variable
+    Level var = MEDIUM; // Enum Variable
     cout << var << "\t";
 
     switch (var)
@@ -33,6 +33,14 @@ int main()
         cout << "Difficuly - Death\n\n";
         break;
     }
+
+    typedef int i; // made i an alias of integer
+    i num = 21;
+    cout << num << "\t";
+
+    using deci = float; // made deci an alias of float
+    deci decimals = 3.14;
+    cout << decimals << "\n\n";
 
     return 0;
 }
