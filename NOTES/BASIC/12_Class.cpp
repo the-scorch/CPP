@@ -2,8 +2,6 @@
 #include <string>
 using namespace std;
 
-// Classes
-
 class laptop
 {
 public: // can be accessed anywhere
@@ -78,17 +76,20 @@ public:
 	}
 };
 
-class Box {
-    int length;
+class Box
+{
+	int length;
+
 public:
-    Box(int l) : length(l) {}
+	Box(int l) : length(l) {}
 
-    Box(const Box& other) { // Copy constructor
-        length = other.length;
-        cout << "Copy constructor called!\n";
-    }
+	Box(const Box &other) // Copy constructor
+	{
+		length = other.length;
+		cout << "Copy constructor called!\n";
+	}
 
-    int getLength() { return length; }
+	int getLength() { return length; }
 };
 
 // Inheritance
@@ -168,9 +169,7 @@ public:
 
 int main()
 {
-
 	// Objects
-
 	laptop lap1;
 	lap1.name = "1) Asus ROG -";
 	lap1.model = " Strix G 16 = ";
@@ -188,7 +187,6 @@ int main()
 	cout << "\n\n";
 
 	// Encapsulation - accessing private members
-
 	Employee person1;
 	person1.setIncome(65000);
 
@@ -199,7 +197,6 @@ int main()
 		 << "Harsh Gupta ~ " << person2.getIncome() << "\n\n";
 
 	// Using Methods
-
 	Class1 objy;
 	objy.method1();
 	objy.method2();
@@ -207,7 +204,6 @@ int main()
 	cout << "\n\n";
 
 	// Example of Class with Function
-
 	car motor1;
 	motor1.name = "Koenigsegg";
 	motor1.tspeed = 330;
@@ -223,7 +219,6 @@ int main()
 	cout << "\n";
 
 	// Using Constructor
-
 	Game fun1("IGI", 2000, "InnerLoop Studios");
 
 	Game fun2("COD", 2003, "Acitvision");
@@ -239,12 +234,11 @@ int main()
 
 	cout << endl;
 
-    Box b1(10);         // Normal constructor
-    Box b2 = b1;        // Copy constructor called
-    cout << b2.getLength() << "\n\n"; // Output: 10
+	Box b1(10);						  // Normal constructor
+	Box b2 = b1;					  // Copy constructor called
+	cout << b2.getLength() << "\n\n"; // Output: 10
 
 	// Using Inheritance
-
 	Child member;
 	Grandchild member1;
 	member.usestatus();
@@ -252,7 +246,6 @@ int main()
 	cout << member.name1 << " & " << member.name2 << ", " << member.name3 << " & " << member1.name4 << "!\n\n";
 
 	// Polymorphism
-
 	Animal myanimal;
 	Dog gshepherd;
 	Cat beluga;
@@ -263,26 +256,30 @@ int main()
 	beluga.sound();
 	sherkhan.sound();
 
-    Animal* animalPtr = new Dog(); // Base class pointer to derived class object
+	Animal *animalPtr = new Dog(); // Base class pointer to derived class object
 
-    Dog* dogPtr = dynamic_cast<Dog*>(animalPtr); // Downcasting - Base class pointer to Derived class pointer
+	Dog *dogPtr = dynamic_cast<Dog *>(animalPtr); // Downcasting - Base class pointer to Derived class pointer
 
-    if (dogPtr) { // check typecasting
-        dogPtr->sound();
-    }
-    else {
-        cout << "Failed to cast to Dog." << endl;
-    }
+	if (dogPtr) // check typecasting
+	{
+		dogPtr->sound();
+	}
+	else
+	{
+		cout << "Failed to cast to Dog." << endl;
+	}
 
-    Cat* catPtr = dynamic_cast<Cat*>(animalPtr); // Typecasting to other dervied class
-    if (catPtr) {
-        catPtr->sound();
-    }
-    else {
-        cout << "Failed to cast to Cat." << endl;
-    }
+	Cat *catPtr = dynamic_cast<Cat *>(animalPtr); // Typecasting to other dervied class
+	if (catPtr)
+	{
+		catPtr->sound();
+	}
+	else
+	{
+		cout << "Failed to cast to Cat." << endl;
+	}
 
-    delete animalPtr; // delete the allocation to avoid memory leaks
+	delete animalPtr; // delete the allocation to avoid memory leaks
 
 	return 0;
 }

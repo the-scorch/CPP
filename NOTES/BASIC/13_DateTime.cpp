@@ -4,15 +4,12 @@ using namespace std;
 
 int main()
 {
-
 	// Timestamp
-
 	time_t current = time(NULL); // Current stamp
 
 	cout << "Current Time: " << ctime(&current) << "\n"; // ctime() - Display date from timestamp
 
 	// Datetime structures
-
 	struct tm bday;
 
 	bday.tm_year = 105;
@@ -46,16 +43,13 @@ int main()
 	cout << "Bro B'day: " << asctime(&bday1) << weekdays[bday1.tm_wday] << "\n\n";
 
 	// Timestamp ~~ Datetime structure
-
 	time_t current1 = time(NULL);
 	struct tm event1 = *localtime(&current1); // for Computer's timezone
 
 	// gmtime() for GMT time zone
-
 	cout << event1.tm_year << "\n\n";
 
 	// For desired Date Format
-
 	time_t current2 = time(NULL);
 	struct tm event2 = *localtime(&current2);
 
@@ -74,7 +68,6 @@ int main()
 	cout << date << "\n\n";
 
 	// Measuring Time between - difftime()
-
 	time_t now = time(NULL);
 	time_t newyear;
 	struct tm event3;
@@ -136,7 +129,6 @@ int main()
 	cout << "From Right Now: " << until2 << " seconds later..\n\n";
 
 	// clock()
-
 	clock_t before = clock();
 
 	int a = 0;

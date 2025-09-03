@@ -50,11 +50,24 @@ struct Outer
 struct Spointer
 {
     int i3;
-    void print(){
-        cout << i3 << endl;
+    void print()
+    {
+        cout << i3 << "\n\n";
     }
 };
 
+struct node // Self-Referential Structure
+{
+    int data;
+    struct node *prev;
+    struct node *next;
+};
+
+union U // group different data types
+{
+    int i;  // Both members
+    char c; // share same memory space
+};
 
 int main()
 {
@@ -86,9 +99,39 @@ int main()
          << "Outer: " << obj.o1 << " " << obj.o2 << "\n\n";
 
     Spointer obj1 = {21};
-    Spointer *sptr = &obj1; //Structure Pointer
+    Spointer *sptr = &obj1; // Structure Pointer
 
     sptr->print(); // accessing the structure pointer
+
+    node box1;
+    box1.data = 10;
+    box1.prev = NULL;
+    box1.next = NULL;
+
+    node box2;
+    box2.data = 20;
+    box2.prev = NULL;
+    box2.next = NULL;
+
+    node box3;
+    box3.data = 30;
+    box3.prev = NULL;
+    box3.next = NULL;
+
+    box1.next = &box2; // Forward Linking
+    box2.next = &box3;
+
+    box2.prev = &box1; // Backward Linking
+    box3.prev = &box2;
+
+    cout << box1.data << " " << box1.next->data << " " << box1.next->next->data << endl;
+    cout << box2.data << " " << box2.next -> data << " " << box2.prev->data << endl;
+
+    U myUnion; // Union variable
+    myUnion.i = 21;
+    myUnion.c = 'A';
+
+    cout << "myUnion.i: " << myUnion.i << endl << "myUnion.c: " << myUnion.c << "\n\n";
 
     return 0;
 }

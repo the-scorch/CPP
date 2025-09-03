@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
 	// Files
-	
 	ofstream File("work.txt"); // Create or Open a txt file
 
 	File << "This is My first File in C++!"; // Write to file
@@ -33,7 +32,6 @@ int main()
 	cout << "\n\n";
 
 	// Exceptions or Errors
-
 	try // handles the exception
 	{
 		int age;
