@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cmath> // math functions
+#include <cmath>
 #include <vector>
-#include <algorithm> // lambda functions
+#include <algorithm>
 using namespace std;
 
 void function() // void type

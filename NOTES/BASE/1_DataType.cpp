@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include <iostream> //inuput & output
 #include <climits>  // access of data type limits
 #include <limits>   // same as above
 #include <typeinfo> // identify the data type
@@ -8,7 +7,7 @@ using namespace std;
 int main()
 {
      // Fundamental Data Types
-     char myLetter = 'M'; // single character
+     char myLetter = 'M'; // single characterd
 
      char dollar = 36; // ASCII value for character
      char rebout = 127;
@@ -71,8 +70,6 @@ int main()
      int i = static_cast<int>(d);
 
      cout << typeid(d).name() << "\t" << typeid(i).name() << endl; // access data type stored in variable
-
-     // dynamic_cast - used in 11_Class.cpp
 
      return 0;
 }
