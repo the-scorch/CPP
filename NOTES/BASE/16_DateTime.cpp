@@ -7,7 +7,7 @@ int main()
 	// Timestamp
 	time_t current = time(NULL); // Current stamp
 
-	cout << "Current Time: " << ctime(&current) << "\n"; // ctime() - Display date from timestamp
+	cout << "Current Time: " << ctime(&current) << "\n"; // Display date from timestamp
 
 	// Datetime structures
 	struct tm bday;
