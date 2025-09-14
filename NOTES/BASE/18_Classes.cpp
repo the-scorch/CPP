@@ -22,14 +22,11 @@ public:
     string name;
     int year;
     string company;
-    Game(string x, int y, string z) // Constructor - auto-initializes values
+    Game(string x, int y, string z) // Constructor - auto-initializes values and execute
     {
         name = x;
         year = y;
         company = z;
-    }
-    void display()
-    {
         cout << name << " was released by " << company << " (" << year << ").\n";
     }
 };
@@ -59,17 +56,12 @@ int main()
     motor2.name = "BMW";
     motor2.specs(250);
     motor2.wmodel("BMW M5 Competition");
-    cout << endl;
 
     // Using Constructor
     Game fun1("IGI", 2000, "InnerLoop Studios");
     Game fun2("COD", 2003, "Acitvision");
     Game fun3("GTA SA", 2004, "Rockstar Games");
     Game fun4("AC", 2007, "Ubisoft Montreal");
-    fun1.display();
-    fun2.display();
-    fun3.display();
-    fun4.display();
     cout << endl;
 
     Box b1(10);                       // Normal constructor

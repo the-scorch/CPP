@@ -1,7 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Parent1
+class Vehicle // Base Class
+{
+public:
+	Vehicle()
+	{
+		cout << "This is a Vehicle!" << endl;
+	}
+};
+class car : public Vehicle // Single Inheritance
+{
+public:
+	car()
+	{
+		cout << "This Vehicle is a car!" << "\n\n";
+	}
+};
+class bike : public Vehicle // Hierarchical Inheritance
+{
+public:
+	bike()
+	{
+		cout << "This Vehicle is a bike!" << "\n\n";
+	}
+};
+
+class Parent1 // 1st Base Class
 {
 public:
 	string name1;
@@ -17,8 +42,7 @@ protected: // derived class can only access
 		cout << name1 << " is now the " << namea << endl;
 	}
 };
-
-class Parent2
+class Parent2 // 2nd Base Class
 {
 public:
 	string name2;
@@ -35,18 +59,18 @@ protected:
 	}
 };
 
-class Child : public Parent1, public Parent2 // Derived class - Multiple
+class child : public Parent1, public Parent2 // Multiple Inheritance
 {
 public:
 	string name3;
-	Child(string s3, string s1, string s2) : Parent1(s1), Parent2(s2)
+	child(string s3, string s1, string s2) : Parent1(s1), Parent2(s2)
 	{
 		name3 = s3;
 	}
 	string namec = "Daughter!";
 	void usestatus()
 	{
-		status1(); // Inheritance
+		status1();
 		status2();
 	}
 	void status3()
@@ -61,11 +85,11 @@ public:
 	}
 };
 
-class Grandchild : public Child // Derived class - Multilevel
+class grandchild : public child // Multilevel Inheritance
 {
 public:
 	string name4;
-	Grandchild(string s4, string s3, string s1, string s2) : Child(s3, s1, s2)
+	grandchild(string s4, string s3, string s1, string s2) : child(s3, s1, s2)
 	{
 		name4 = s4;
 	}
@@ -90,14 +114,17 @@ public:
 
 int main()
 {
-	Child p1("Lisa", "Ash", "Marry");
+	car obj1;
+	bike obj2;
+
+	child p1("Lisa", "Ash", "Marry");
 	p1.usestatus();
 	cout << endl;
 	p1.status3();
 	p1.newstatus1();
 	cout << endl;
 
-	Grandchild p2("Jake", "Lisa", "Ash", "Marry");
+	grandchild p2("Jake", "Lisa", "Ash", "Marry");
 	p2.status4();
 	p2.newstatus2();
 
