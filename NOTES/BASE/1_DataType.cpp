@@ -1,13 +1,13 @@
 #include <iostream> //inuput & output
 #include <climits>  // access of data type limits
-#include <limits>   // same as above
+#include <limits>
 #include <typeinfo> // identify the data type
 using namespace std;
 
 int main()
 {
      // Fundamental Data Types
-     char myLetter = 'M'; // single characterd
+     char myLetter = 'M'; // single character
 
      char dollar = 36; // ASCII value for character
      char rebout = 127;
@@ -17,10 +17,10 @@ int main()
      long myLongNum = 662256000; // long integer
 
      float myFloatingNum = 62.35; // decimal
-     double eradius = 6E3;        // big decimal, Scientifitic number
+     double eradius = 6E3;        // big decimal, scientifitic number
 
-     bool codfun = true;    // as 0
-     bool smokcool = false; // as 1
+     bool codfun = true;    // 0
+     bool smokcool = false; // 1
 
      string myText = "Scorch"; // text
 
@@ -33,13 +33,11 @@ int main()
      auto a12 = 1.23345; // automatic data type
      auto b12 = 'J';
      auto c12 = "Ashitabh";
-
      cout << a12 << "\t" << b12 << "\t" << c12 << endl;
 
      const int minperhour = 60; // assign fixed value
      const double pi = 3.142857;
      const char firstlet = 'a';
-
      cout << "\n\nMinutes per Hour - " << minperhour << "\nValue of Pi - " << pi << "\nFirst Letter - " << firstlet << "\n\n";
 
      // Size of data types
