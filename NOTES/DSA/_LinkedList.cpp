@@ -155,37 +155,5 @@ int main()
           << "\t" << texts.empty() << endl; // if No elements = 1, Else = 0
      cout << todo.size() << "\t" << todo.empty() << "\n\n";
 
-     auto it = todo.begin(); // Declare to first element
-     cout << *it << "\t";
-
-     advance(it, 1); // pointing to second element
-     cout << *it << "\t";
-
-     it = todo.end();
-     --it; // pointing to last element
-     cout << *it << "\n\n";
-
-     for (it = todo.begin(); it != todo.end(); it++)
-     {
-          if (*it == 5) // finds &
-          {
-               it = todo.erase(it); // remove the element
-               break;
-          }
-     }
-
-     for (it = todo.begin(); it != todo.end(); it++) // for-loop using iterator
-     {
-          cout << *it << "\t";
-     }
-     cout << "\n\n";
-
-     list<int> count = {1, 2, 3, 4, 5};
-     for (auto it1 = count.rbegin(); it1 != count.rend(); it1++) // reverse iterator for-loop
-     {
-          cout << *it1 << "\t";
-     }
-     cout << "\n\n";
-
      return 0;
 }

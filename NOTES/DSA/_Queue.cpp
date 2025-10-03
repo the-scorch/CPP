@@ -6,9 +6,8 @@ using namespace std;
 
 int main()
 {
-    // Queue
-
-    queue<char> line; // Declaration
+    //Queue
+    queue<char> line;
 
     line.push('Z');
     line.push('A');
@@ -30,8 +29,7 @@ int main()
     cout << line.front() << "\n\n";
 
     // Deque
-
-    deque<char> line1 = {'P', 'Q', 'W', 'S', 'T'}; // Declaration
+    deque<char> line1 = {'P', 'Q', 'W', 'S', 'T'};
 
     for (char a : line1) // printing the stack elements
     {
@@ -63,40 +61,6 @@ int main()
     cout << line1.size() << "\t"; // gives the size of the deque
 
     cout << line1.empty() << "\n\n"; // if No elements = 1, Else = 0
-
-    // Iterator
-
-    // vector<string>::iterator it;
-    auto it = line1.begin(); // Declare to first element
-    cout << *it << "\t";
-
-    it = line1.begin() + 1; // pointing to second element
-    cout << *it << "\t";
-
-    it = line1.end() - 1; // pointing to last element
-    cout << *it << "\n\n";
-
-    for (it = line1.begin(); it != line1.end(); it++)
-    {
-        if (*it == 'R') // finds &
-        {
-            it = line1.erase(it); // remove the element
-        }
-    }
-
-    for (it = line1.begin(); it != line1.end(); it++) // for-loop using iterator
-    {
-        cout << *it << "\t";
-    }
-
-    cout << "\n\n";
-
-    deque<char> lane = {'Q', 'W', 'E', 'R', 'T', 'Y'};
-
-    for (auto it1 = lane.rbegin(); it1 != lane.rend(); it1++) // reverse iterator for-loop
-    {
-        cout << *it1 << "\t";
-    }
 
     return 0;
 }

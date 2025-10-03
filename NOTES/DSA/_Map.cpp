@@ -59,43 +59,5 @@ int main()
                << endl;
      }
 
-     // Iterator
-
-     // vector<string>::iterator it;
-     auto it = suspect1.begin(); // Declare to first element
-     cout << it->first << ": " << it->second << "\t";
-
-     advance(it, 1); // pointing to second element
-     cout << it->first << ": " << it->second << "\t";
-
-     it = prev(suspect1.end()); // pointing to last element
-     cout << it->first << ": " << it->second << "\n\n";
-
-     for (it = suspect1.begin(); it != suspect1.end();)
-     {
-          if (it->first == 101 && it->second == "Unknown") // finds &
-          {
-               it = suspect1.erase(it); // remove the element
-          }
-          else
-          {
-               it++;
-          }
-     }
-
-     for (it = suspect1.begin(); it != suspect1.end(); it++) // for-loop using iterator
-     {
-          cout << it->first << ": " << it->second << "\t";
-     }
-
-     cout << "\n\n";
-
-     map<string, int> hcm = {{"Ashitabh Srivastava", 175}, {"Pranaw Prakash", 173}, {"Anshuman Srivastava", 171}, {"Bokka Gupta", 177}};
-
-     for (auto it1 = hcm.rbegin(); it1 != hcm.rend(); it1++) // reverse iterator for-loop
-     {
-          cout << it1->first << ": " << it1->second << "\t";
-     }
-
      return 0;
 }

@@ -42,7 +42,7 @@ int main()
 
      cout << foods.size() << "\t" << foods.empty() << "\n\n";
 
-     // vector<string>::iterator it;
+     // vector<string>::iterator it; any type
      auto it = foods.begin(); // Declare to first element
      cout << *it << "\t";
      it = foods.begin() + 1; // pointing to second element
