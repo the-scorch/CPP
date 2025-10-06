@@ -167,5 +167,26 @@ int main()
       cout << endl;
    }
 
+   int num4;
+   cout << "Enter a number (last time ;): ";
+   cin >> num4;
+   for (int i = 0; i < num4; i++) // DABANG
+   {
+      for (int j = 1; j <= num4-i; j++)
+      {
+         cout << j;
+      }
+      int k = 2 * i;
+      while (k--)
+      {
+         cout << "*";
+      }
+      for (int l = num4-i; l >= 1; l--)
+      {
+         cout << l;
+      }
+      cout << endl;
+   }
+
    return 0;
 }

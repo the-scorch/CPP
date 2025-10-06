@@ -3,7 +3,6 @@ using namespace std;
 
 int main()
 {
-
      // Arithmetic
      int sum = 1 + 2;
      int sub = 6 - 2;
@@ -33,15 +32,6 @@ int main()
 
      cout << c1 << '\t' << c2 << '\t' << c3 << '\t' << c4 << '\t' << c5 << "\n\n";
 
-     // Bitwise
-     int a1 = 6, b1 = 4;
-     cout << (a1 & b1) << '\t'; // AND: if both Bits are 1 => set Bits = 1
-     cout << (a1 | b1) << '\t'; // OR: if either Bit is 1 => set Bits = 1
-     cout << (a1 ^ b1) << '\t'; // XOR: if Bits are different => set Bits = 1
-     cout << (a1 << 1) << '\t'; // Left Shift: moves bits to left (by 1)
-     cout << (a1 >> 2) << '\t'; // Right Shift: Moves bits to right (by 2)
-     cout << ~(a1) << "\n\n";   // Complement: change Binary digits: 1 -> 0, 0 -> 1
-
      // Relational: True = 1, False = 0
      int i = 10;
      int j = 16;
@@ -57,6 +47,15 @@ int main()
      cout << (k > 9 && l < 15)                                                       // AND: Both true = 1, else 0
           << '\t' << (k > 9 || l < 15)                                               // OR: Either true = 1, else 0
           << '\t' << (!(k > 9 && l < 15)) << '\t' << (!(k > 9 || l < 15)) << "\n\n"; // NOT: False = 1, True = 0
+
+     // Bitwise: Operates on Binary Digits
+     int a1 = 6, b1 = 4;
+     cout << "a1 & b1 : " << (a1 & b1) << '\t';   // AND: both 1 = 1
+     cout << "a1 | b1 : " << (a1 | b1) << '\t';   // OR: either 1 = 1
+     cout << "a1 ^ b1 : " << (a1 ^ b1) << '\t';   // XOR: different = 1
+     cout << "~a1 : " << ~(a1) << '\t';       // NOT: 0 => 1, 1 => 0
+     cout << "a1 << 1 : " << (a1 << 1) << '\t';   // Left Shift: moves to left (by 1)
+     cout << "a1 >> 2 : " << (a1 >> 2) << "\n\n"; // Right Shift: moves to right (by 2)
 
      return 0;
 }
