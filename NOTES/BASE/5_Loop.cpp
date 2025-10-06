@@ -1,14 +1,11 @@
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
 
 int main()
 {
-
    // while loop
-   int a;
-   while (a < 7) // terminating condition for loop
+   int a = 1;
+   while (a < 7) // terminating condition
    {
       cout << a << "\t";
       a++;
@@ -29,10 +26,9 @@ int main()
       cout << "Enter a positive number: ";
       cin >> n;
    } while (n <= 0); // ensure user enters a positive number
-
    cout << "Entered number: " << n << "\n\n";
 
-   // for loop
+   // for-loop
    for (int c = 0; c < 10; c++) // initialization, condition, updation
    {
       cout << c << "\t";
@@ -49,7 +45,7 @@ int main()
    {
       if (h == 7)
       {
-         break; // breaks the loop
+         break; // breaks out of loop
       }
       cout << h << "\t";
    }
@@ -65,7 +61,8 @@ int main()
    }
    cout << "\n\n";
 
-   for (int e = 6; e <= 8; e++) // Nested loop
+   // Nested loop
+   for (int e = 6; e <= 8; e++)
    {
       cout << "External: " << e << "\n"; // Executes 3 times
 
@@ -76,13 +73,13 @@ int main()
    }
    cout << endl;
 
-   for (int m = 0, n = 10; m < 7; m++, n--) // Multiple variables in for loop
+   for (int m = 0, n = 10; m < 7; m++, n--) // Multiple variables in for-loop
    {
       cout << "m : " << m << "\t" << "n: " << n << endl;
    }
    cout << endl;
 
-   // Range-based for loop
+   // Range based for-loop / for-each loop
    int nums[] = {1, 2, 3, 4, 5};
 
    for (int i : nums)
@@ -91,24 +88,84 @@ int main()
    }
    cout << endl;
 
-   vector<int> v = {1, 2, 3, 4, 5};
-
-   for (auto &i : v) // modify element using reference
+   for (auto &i : nums) // modify element using reference
    {
       i++;
    }
-
-   for (auto i : v)
+   for (auto i : nums)
    {
       cout << i << " ";
    }
    cout << "\n\n";
 
    /* Infinite loop
+   while(true){
+   }
    for(;;)
    {
-      cout << "Infinite..";
    }*/
+
+   // Pattern Printing
+   int num1;
+   cout << "Enter a number: ";
+   cin >> num1;
+   for (int i = 1; i <= num1; i++) // Half-Triangle
+   {
+      for (int j = 1; j <= i; j++)
+      {
+         cout << "*";
+      }
+      cout << endl;
+   }
+   cout << endl;
+
+   int num2;
+   cout << "Enter another number: ";
+   cin >> num2;
+   for (int i = num2; i >= 1; i--) // Inverted Half-Triangle
+   {
+      for (int j = i; j >= 1; j--)
+      {
+         cout << j << " ";
+      }
+      cout << endl;
+   }
+   cout << endl;
+
+   int row, col;
+   cout << "Enter No. of Row & Column: ";
+   cin >> row >> col;
+   char ch = 'A';
+   for (int i = 1; i <= row; i++) // Square Box
+   {
+      for (int j = 1; j <= col; j++)
+      {
+         cout << ch << " ";
+         ch++;
+      }
+      cout << endl;
+   }
+   cout << endl;
+
+   int num3;
+   cout << "Enter a number again: ";
+   cin >> num3;
+   for (int i = 1; i <= num3; i++) // TRIANGLE
+   {
+      for (int j = 1; j <= num3 - i; j++)
+      {
+         cout << " ";
+      }
+      for (int k = 0; k <= i; k++)
+      {
+         cout << char(65 + k);
+      }
+      for (int l = i - 1; l >= 0; l--)
+      {
+         cout << char(65 + l);
+      }
+      cout << endl;
+   }
 
    return 0;
 }

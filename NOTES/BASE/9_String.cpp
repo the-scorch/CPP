@@ -55,11 +55,6 @@ int main()
 
      cout << txt1 << "\n\n";
 
-     string fullName;
-     cout << "Type your Full Name: ";
-     getline(cin, fullName); // take whole line as input, newline as terminator
-     cout << "Your name is: " << fullName << endl;
-
      char pass[50];
      cout << "Enter Password of 8 characters: ";
      cin.read(pass, 8);                             // take defined no. of characters as input, space as terminator

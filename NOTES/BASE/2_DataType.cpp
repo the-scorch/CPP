@@ -1,16 +1,13 @@
-#include <iostream> //inuput & output
-#include <climits>  // access of data type limits
+#include <iostream> // inuput & output
+#include <string>
+#include <climits>  // access data type limits
 #include <limits>
-#include <typeinfo> // identify the data type
+#include <typeinfo> // identify data type
 using namespace std;
 
 int main()
 {
-     // Fundamental Data Types
-     char myLetter = 'M'; // single character
-
-     char dollar = 36; // ASCII value for character
-     char rebout = 127;
+     char myLetter = 'M'; // stores single character
 
      int myInteger = 19;         // integer
      myInteger = 21;             // overwrite value
@@ -24,11 +21,11 @@ int main()
 
      string myText = "Scorch"; // text
 
-     cout << "\tVariables :-\n\n"
-          << "\nLetter - " << myLetter << "\nDollar - " << dollar << rebout 
-          << "Age - " << myInteger << "\nSeconds on Earth - " << myLongNum 
-          << "\nWeight - "<< myFloatingNum << "\nEarth Radius - " << eradius 
-          << "\nIs Coding Fun? - " << codfun << "\tIs Smoking Cool? - " << smokcool << "\nName - " << myText << "\n\n";
+     cout << "\n\tVariables :-\n"
+          << "\nLetter - " << myLetter << "\nAge - " << myInteger
+          << "\nSeconds on Earth - " << myLongNum << "\nWeight - " << myFloatingNum
+          << "\nEarth Radius - " << eradius << "\nIs Coding Fun? - " << codfun << "\tIs Smoking Cool? - " << smokcool
+          << "\nName - " << myText << "\n\n";
 
      auto a12 = 1.23345; // automatic data type
      auto b12 = 'J';
@@ -38,7 +35,7 @@ int main()
      const int minperhour = 60; // assign fixed value
      const double pi = 3.142857;
      const char firstlet = 'a';
-     cout << "\n\nMinutes per Hour - " << minperhour << "\nValue of Pi - " << pi << "\nFirst Letter - " << firstlet << "\n\n";
+     cout << "\nMinutes per Hour - " << minperhour << "\nValue of Pi - " << pi << "\nFirst Letter - " << firstlet << "\n\n";
 
      // Size of data types
      cout << "Size of char: " << sizeof(char) << " byte" << endl;
@@ -53,9 +50,9 @@ int main()
      cout << "double ranges from: " << numeric_limits<double>::min() << " to " << numeric_limits<double>::max() << "\n\n";
 
      // Data Type Modifiers
-     cout << "Size of short int: " << sizeof(short int) << " bytes" << endl;         // decrease the size & range
-     cout << "Size of long long int: " << sizeof(long long int) << " bytes" << endl; // increase the size & range
-     cout << "Size of long double: " << sizeof(long double) << " bytes" << "\n\n";   // used for more precision
+     cout << "Size of short int: " << sizeof(short int) << " bytes" << endl;         // decrease size & range
+     cout << "Size of long long int: " << sizeof(long long int) << " bytes" << endl; // increase size & range
+     cout << "Size of long double: " << sizeof(long double) << " bytes" << "\n\n";   // increase precision
 
      cout << "short int ranges from: " << numeric_limits<short int>::min() << " to " << numeric_limits<short int>::max() << endl;
      cout << "long long int ranges from: " << numeric_limits<long long int>::min() << " to " << numeric_limits<long long int>::max() << endl;
@@ -64,10 +61,26 @@ int main()
      cout << "unsigned int ranges from: " << numeric_limits<unsigned int>::min() << " to " << numeric_limits<unsigned int>::max() << "\n\n"; // store only positive value
 
      // Type Casting
-     double d = 12.3223;
-     int i = static_cast<int>(d);
+     double mydoub = 12.3223;
+     int myint = static_cast<int>(mydoub); // explicit conversion
 
-     cout << typeid(d).name() << "\t" << typeid(i).name() << endl; // access data type stored in variable
+     cout << typeid(mydoub).name() << "\t" << typeid(myint).name() << endl; // data type stored in variable
+
+     int i1 = 'a';     // implicit conversion
+     char dollar = 36; // ASCII values
+     char rebout = 127;
+     /*'0' = 48 … '9' = 57
+     'A' = 65 … 'Z' = 90
+     'a' = 97 … 'z' = 122
+     Space = 32, Tab = 9, Newline = 108*/
+     int a = 123456;
+     char a1 = a; // can only store 64
+     double d = 6.64221253124;
+     int d1 = d;
+
+     cout << "\nDollar - " << dollar << rebout << endl
+          << i1 << '\t' << a1 << endl
+          << d << '\t' << d1 << endl;
 
      return 0;
 }

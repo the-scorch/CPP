@@ -9,11 +9,11 @@ int main()
     cout << "Enter your Age: ";
     cin >> myAge;
 
-    if (myAge >= voterAge) // Condition
+    if (myAge >= voterAge) // Base Condition
     {
         cout << "Old enough to Vote!\n\n";
     }
-    else // if condition is false
+    else // if base condition found false
     {
         cout << "Not old enough to Vote.\n\n";
     }
@@ -26,7 +26,7 @@ int main()
     {
         cout << "Good Morning!" << "\n\n";
     }
-    else if (time < 1800) // 2nd condition, if 1st is false
+    else if (time < 1800) // if previous condition found false
     {
         cout << "Good Afternoon!" << "\n\n";
     }
@@ -87,7 +87,7 @@ int main()
     case 12:
         cout << "December" << "\n\n";
         break;
-        default: // if no condition was true
+        default: // if no condition was found true
         cout << "Haha, Nice Joke...\n\n";
     }
 
@@ -95,10 +95,10 @@ int main()
     cout << "Enter an Integer: ";
     cin >> n;
     if (n % 2 == 0) {
-        goto label1; // Skipping to label1
+        goto label1; // Jump to label1
     }
     else {
-        goto label2; // Skipping to label2
+        goto label2; // Jump to label2
     }
 
 label1:

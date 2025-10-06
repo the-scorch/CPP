@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <limits>
 #include <iomanip> // set_, manipulators...
 using namespace std;
@@ -6,9 +7,9 @@ using namespace std;
 int main()
 {
      // Output
-     cout << "This is Ashitabh Srivastava!"; // print anything
-     cout << " Learning C++ language..End of line" << endl;
-     cout << "Another\tEscape sequence, \\Backward Slash, \"Double Quote\" \n\n";
+     cout << "This is Ashitabh Srivastava!";                                   // << : Insertion operator to show data on screen
+     cout << " Learning C++ language.." << endl;                               // end of line
+     cout << "Another\tEscape sequence, \\Back Slash, \"Double Quotes\" \n\n"; // n - newline, t = tab
 
      // Input
      cout << "\tPrinting from User Input :-\n";
@@ -26,26 +27,19 @@ int main()
      printf("%ld\n%c\n%lf\n\n", b, c, e); // large no. of Outputs
 
      // Output stream Modifiers
-     cout << setw(10) << 2342 << endl; // width for next output
-
-     cout << setprecision(3) << 3.14159 << endl; // precision to 3 for next output
-     cout.precision(5); // another way
-     cout << 3.14159 << endl;
-
-     cout << fixed << 3.14159 << endl; // fixed-point notation
-
-     cout << scientific << 3.14159 << endl; // scientific notation
-
-     cout << showpoint << 42.0 << "\n\n"; // always show the decimal point (even for whole numbers)
+     cout << setw(10) << 2342 << endl;                    // width for next output
+     cout << setprecision(4) << 3.14159 << endl;          // 4 significant digits
+     cout << fixed << setprecision(4) << 3.14159 << endl; // 4 digits after decimal
+     cout << showpoint << 42.0 << endl;                   // always show the decimal point (even for whole numbers)
+     cout << scientific << 3.14159 << "\n\n";             // exponential form of 10^_
 
      // Boolean Manipulators
      bool answer = true;
-
-     cout << boolalpha << "Is C++ fun? " << answer << endl; // print true/false
-     cout << noboolalpha << "Position of C++? " << answer << "\n\n"; // print 1/0
+     cout << boolalpha << "Is C++ fun: " << answer << endl;          // true/false
+     cout << noboolalpha << "Rank of C++: " << answer << "\n\n"; // 1/0
 
      // Alignment & Sign Manipulators
-     int num = 42;
+     int num = 77;
      cout << "Left Aligned: " << left << setw(10) << num << endl;
      cout << "Right Aligned: " << right << setw(10) << num << endl;
      cout << "Show +ve sign: " << showpos << num << endl;
@@ -54,19 +48,26 @@ int main()
      // Base Manipulators
      cout << "Hexadecimal: " << hex << num << endl;
      cout << "Decimal: " << dec << num << endl;
-     cout << "Octal: " << oct << num << "\n\n";
+     cout << "Octal: " << oct << num << endl;
 
      // Input stream Modifiers
-     char x, y;
+     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+     int a;
+     a = cin.get();//can take newline, tab and space as input
+     cout << "Value provided by User: " << a << "\n\n";
+     
+     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+     string fullName;
+     cout << "Type your Full Name: ";
+     getline(cin, fullName); // take whole line as input, only newline as terminator
+     cout << "Your name is: " << fullName << "\n\n";
 
+     char x, y;
      cout << "Type a character: ";
      cin >> ws >> x; // ignore leading whitespace, default
-
      cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
      cout << "Type another character: ";
      cin >> noskipws >> y; // don't skip whitespace
-
      cout << "x: " << x << ", y: " << y << "\n\n";
 
      // Error Handling
@@ -76,7 +77,7 @@ int main()
      cin >> n1;
      if (n1 == 0)
      {
-          cerr << "Error!! Aren't You listening??" << "\n\n"; // immediate display of error
+          cerr << "Error!! Are You even Listening??" << "\n\n"; // immediate display of error
           return 1;                                           // exit the program with error code 1
      }
      else
