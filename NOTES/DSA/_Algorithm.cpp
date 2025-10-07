@@ -36,7 +36,7 @@ int main()
 
     cout << "\n\n";
 
-    //Find, Upper Bound, Min, Max
+    // Find, Upper Bound, Min, Max
     vector<int> nums1 = {3, 6, 9, 3, 7, 3, 9, 1};
 
     auto it = find(nums1.begin(), nums1.end(), 10); // finds the given value
@@ -82,12 +82,14 @@ int main()
     // Using Lambda Function
     vector<int> v = {5, 1, 8, 3, 9, 2};
 
-	auto it4 = find_if(v.begin(), v.end(), [] (const int& a) { // to find first element that is divisible by 3
-		return a % 3 == 0;
-	});
+    auto it4 = find_if(v.begin(), v.end(), [](const int &a) { // to find first element that is divisible by 3
+        return a % 3 == 0;
+    });
 
-    if (it4 != v.end()) cout << *it4 << endl;
-	else cout << "No such element" << endl;
+    if (it4 != v.end())
+        cout << *it4 << endl;
+    else
+        cout << "No such element" << endl;
 
     // Copylet
     vector<char> let = {'A', 'Y', 'U', 'S', 'H'};
@@ -103,7 +105,7 @@ int main()
 
     cout << endl;
 
-    //Fill
+    // Fill
     vector<int> sev(7);
 
     fill(sev.begin(), sev.end(), 7); // fill the 7 in seven vector
