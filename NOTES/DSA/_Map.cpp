@@ -5,9 +5,7 @@ using namespace std;
 
 int main()
 {
-     // Map - key, value
-
-     map<int, string> suspect = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {804, "Pranaw Prakash"}, {102, "Deceased"}}; // Declaration
+     map<int, string> suspect = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {804, "Pranaw Prakash"}, {102, "Deceased"}};
      // sorted in ascending order as per key (default)
 
      cout << "Suspect 213: " << suspect[101]; // accessing Values - by Keys
@@ -46,18 +44,21 @@ int main()
 
      cout << "\n\n";
 
-     map<int, string, greater<int>> suspect1 = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {
-                                                                                                    103,
-                                                                                                    "Nobody",
-                                                                                                }}; // Declaration                                                                                                                                 // sort in descending order as per key
-     // sorted in descending order as per key
-
+     map<int, string, greater<int>> suspect1 = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {103, "Nobody"}}; // sorted in descending order as per key
      for (auto sus : suspect1)
      {
           cout << "Suspect " << sus.first
                << ": " << sus.second
                << endl;
      }
+
+     // Multimap - can store duplicate key values
+     multimap<int, int, greater<int>> score = {{4, 1}, {3, 2}, {3, 3}, {5, 4}};
+     for (auto &it : score)
+     {
+          cout << it.first << " " << it.second;
+     }
+     cout << "\n\n";
 
      return 0;
 }

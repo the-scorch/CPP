@@ -3,7 +3,7 @@ class Solution
 public:
     int findComplement(int num)
     {
-        if (n == 0)
+        if (num == 0) // edge case
         {
             return 1;
         }
@@ -17,3 +17,4 @@ public:
         return one ^ num;
     }
 };
+// same as Q.1009

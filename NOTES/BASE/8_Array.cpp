@@ -37,7 +37,25 @@ int main()
   cout << endl;
 
   int nums1[4] = {2, 5, 7, 3};
-  cout << sizeof(nums1) << "\t" << sizeof(nums1)/sizeof(int) << "\n\n"; // No. of array's elements
+  cout << sizeof(nums1) << "\t" << sizeof(nums1) / sizeof(int) << "\n\n"; // No. of array's elements
+
+  int arr[6] = {4, 8, 2, 9, 0, 7};
+  for (int i : arr)
+  {
+    cout << i << '\t';
+  }
+  cout << endl;
+
+  for (int i = 0; i < 6 / 2; i++) // Reversing Array
+  {
+    swap(arr[i], arr[5 - i]);
+  }
+
+  for (int i : arr)
+  {
+    cout << i << '\t';
+  }
+  cout << endl;
 
   // 2D Array
 

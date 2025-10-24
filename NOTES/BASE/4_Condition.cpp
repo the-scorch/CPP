@@ -35,10 +35,10 @@ int main()
         cout << "Good Evening!" << "\n\n";
     }
 
-    int month;
+    int month, num = 1;
     cout << "Enter Month number: ";
     cin >> month;
-    switch (month) // only integer or enum type
+    switch (month) // only int/char/enum type
     {
     case 1:
         cout << "January";
@@ -87,17 +87,29 @@ int main()
     case 12:
         cout << "December" << "\n\n";
         break;
-        default: // if no condition was found true
+
+    case 13:
+        switch (num)
+        {
+            case 1:
+            cout << "Added a 13th month or what??"
+            break;
+        }
+        break;
+
+    default: // if no condition was found true
         cout << "Haha, Nice Joke...\n\n";
     }
 
     int n;
     cout << "Enter an Integer: ";
     cin >> n;
-    if (n % 2 == 0) {
+    if (n % 2 == 0)
+    {
         goto label1; // Jump to label1
     }
-    else {
+    else
+    {
         goto label2; // Jump to label2
     }
 
