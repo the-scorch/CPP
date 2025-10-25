@@ -183,10 +183,37 @@ int main()
         {
             minv = i;
         }
-    } // Time Complexity = n (Linear)
+    } // Time Complexity = n, Space Complexity = O(1)
     cout << "\nLowest Value: " << minv;
 
-    // Bubble Sort
+    // Selection Sort - Unstable
+    array<int, 26> arr1 = {5, 7, 2, 7, 7, 2, 2, 7, 8, 9, 2, 0, 4, 7, 2, 2, 1, 7, 8, 6, 5, 3, 3, 1, 2, 2};
+    int s1 = arr1.size();
+    cout << "Unsorted Array: ";
+    for (int i : arr1)
+    {
+        cout << i << " ";
+    }
+    for (int i = 0; i < s1 - 1; i++)
+    {
+        int minid = i;
+        for (int j = i + 1; j < s1; j++)
+        {
+            if (arr1[minid] > arr1[j])
+            {
+                minid = j;
+            }
+        }
+        swap(arr1[i], arr1[minid]);
+    } // TC = O(n^2) & Ω(n^2), SC = O(1)
+    cout << "\nSorted Array:   ";
+    for (int i : arr1)
+    {
+        cout << i << " ";
+    }
+    cout << "\n\n";
+
+    // Bubble Sort - Stable
     cout << "\nUnsorted Array: ";
     for (int i : arr)
     {
@@ -207,7 +234,7 @@ int main()
         {
             break;
         }
-    } // TC = O(n^2) (Best case is O(n))
+    } // TC = O(n^2) & Ω(n), SC = O(1)
     cout << "\nSorted Array:   ";
     for (int i : arr)
     {
@@ -215,34 +242,7 @@ int main()
     }
     cout << "\n\n";
 
-    // Selection Sort
-    array<int, 26> arr1 = {5, 7, 2, 7, 7, 2, 2, 7, 8, 9, 2, 0, 4, 7, 2, 2, 1, 7, 8, 6, 5, 3, 3, 1, 2, 2};
-    int s1 = arr1.size();
-    cout << "Unsorted Array: ";
-    for (int i : arr1)
-    {
-        cout << i << " ";
-    }
-    for (int i = 0; i < s1 - 1; i++)
-    {
-        int minid = i;
-        for (int j = i + 1; j < s1; j++)
-        {
-            if (arr1[minid] > arr1[j])
-            {
-                minid = j;
-            }
-        }
-        swap(arr1[i], arr1[minid]);
-    } // TC = O(n^2) (Best & Worst cases are almost same)
-    cout << "\nSorted Array:   ";
-    for (int i : arr1)
-    {
-        cout << i << " ";
-    }
-    cout << "\n\n";
-
-    // Insertion Sort
+    // Insertion Sort - Stable
     array<int, 12> arr2 = {52, 25, 23, 523, 356, 253, 7347, 246, 745, 2, 52, 253};
     int s2 = arr2.size();
     cout << "Unsorted Array: ";
@@ -262,7 +262,7 @@ int main()
             j--;
         }
         arr2[insert] = val;
-    } // TC = O(n^2) (Best = O(n))
+    } // TC = O(n^2) & Ω(n)
     cout << "\nSorted Array:   ";
     for (int i : arr2)
     {
@@ -270,7 +270,7 @@ int main()
     }
     cout << "\n\n";
 
-    // Qucik Sort
+    // Qucik Sort - Unstable
     array<int, 12> arr3 = {52, 25, 23, 523, 356, 253, 7347, 246, 745, 2, 52, 253};
     int s3 = arr3.size();
     cout << "Unsorted Array: ";
@@ -286,7 +286,7 @@ int main()
     }
     cout << "\n\n";
 
-    // Counting Sort
+    // Counting Sort - Stable
     array<int, 12> arr4 = {5, 2, 2, 5, 3, 2, 7, 2, 7, 2, 5, 2};
     cout << "Unsorted Array: ";
     for (int i : arr4)
@@ -301,7 +301,7 @@ int main()
     }
     cout << "\n\n";
 
-    // Radix Sort
+    // Radix Sort - Stable
     array<int, 12> arr5 = {5234, 2234, 2234, 5324, 3455, 2757, 737, 24, 7, 2457, 556, 245};
     cout << "Unsorted Array: ";
     for (int i : arr5)
@@ -316,7 +316,7 @@ int main()
     }
     cout << "\n\n";
 
-    // Merge Sort
+    // Merge Sort - Stable
     array<double, 12> arr6 = {5234, 2234, 2234, 5324, 3455, 2757, 737, 24, 7, 2457, 556, 245};
     cout << "Unsorted Array: ";
     for (int i : arr6)
