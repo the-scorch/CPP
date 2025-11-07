@@ -222,7 +222,7 @@ int main()
     for (int i = 0; i < s - 1; i++)
     {
         bool swapped = false;
-        for (int j = 0; j < s - 1; j++)
+        for (int j = 0; j < s - 1 - i; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -262,7 +262,7 @@ int main()
             j--;
         }
         arr2[insert] = val;
-    } // TC = O(n^2) & Ω(n)
+    } // TC = O(n^2) & Ω(n), SC = O(1)
     cout << "\nSorted Array:   ";
     for (int i : arr2)
     {

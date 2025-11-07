@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int linear_s(int arr[], int target, int s) // TC = O(n)
+int linear_s(int arr[], int target, int s) // TC = O(n), SC = O(1)
 {
     for (int i = 0; i < s; i++)
     {
@@ -13,13 +13,13 @@ int linear_s(int arr[], int target, int s) // TC = O(n)
     return -1;
 }
 
-int binary_s(int arr[], int target, int s) // TC = O(log2(n))
+int binary_s(int arr[], int target, int s) // TC = O(log2(n)), SC = O(1)
 {
     int left = 0;
     int right = s - 1;
     while (left <= right)
     {
-        int mid = left + (right-left) / 2;
+        int mid = left + (right - left) / 2;
         if (arr[mid] == target)
         {
             return mid;
