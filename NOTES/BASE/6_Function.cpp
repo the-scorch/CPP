@@ -189,7 +189,9 @@ int main()
     // Inbuilt Math Functions
     cout << "Max of Two: " << max(20, 74) << "\t" << min(-2, -4) << endl;
     cout << "Square Root of 4761: " << sqrt(4761) << endl;
-    cout << "Rounding of 53.456: " << round(53.456) << endl;
+    cout << "Rounding to Nearest Integer: " << round(53.456) << endl;
+    cout << "Rounding to Bigger integer: " << ceil(2.57) << endl;
+    cout << "Rounding to Smaller integer: " << floor(2.57) << endl;
     cout << "Natural Logarithm of 9: " << log(9) << endl;
     cout << "Absoulte Value of -7: " << abs(-7) << "\n\n"; // gives absolute value
 

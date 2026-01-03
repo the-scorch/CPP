@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../ClimaView"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ClimaView"
+	}
+}

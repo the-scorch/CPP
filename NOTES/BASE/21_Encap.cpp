@@ -44,5 +44,7 @@ int main()
     Car bugatti;
     bugatti.mileage();
 
+    cout << "\n\n\tTHE END OF C++ !";
+
     return 0;
 }

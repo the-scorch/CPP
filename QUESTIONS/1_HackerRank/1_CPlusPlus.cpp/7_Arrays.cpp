@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//https://www.hackerrank.com/challenges/arrays-introduction/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/arrays-introduction/problem?isFullScreen=true
 
 int main()
 {
@@ -18,6 +18,6 @@ int main()
     {
         cout << arr[i] << " ";
     }
-    
+
     return 0;
 }

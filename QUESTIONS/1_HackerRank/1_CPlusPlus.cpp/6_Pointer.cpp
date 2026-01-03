@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//https://www.hackerrank.com/challenges/c-tutorial-pointer/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/c-tutorial-pointer/problem?isFullScreen=true
 
 void fun(int *x, int *y)
 {

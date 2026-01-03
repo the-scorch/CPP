@@ -21,7 +21,7 @@ int main()
             cin >> a;
             v.push_back(a);
         }
-        
+
         vec.push_back(v);
     }
 

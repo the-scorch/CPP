@@ -5,58 +5,67 @@ using namespace std;
 
 class Box
 {
-    private:
+private:
     int l;
     int b;
     int h;
-    
-    public:
-    Box(){
+
+public:
+    Box()
+    {
         l = b = h = 0;
     }
-    
-    Box(int x, int y, int z){
+
+    Box(int x, int y, int z)
+    {
         l = x;
         b = y;
         h = z;
     }
-    
-    Box(const Box& other){ // Copy Constructor
+
+    Box(const Box &other)
+    { // Copy Constructor
         l = other.l;
         b = other.b;
         h = other.h;
     }
-    
-    int getLength(){
+
+    int getLength()
+    {
         return l;
     }
-    
-    int getBreadth(){
+
+    int getBreadth()
+    {
         return b;
     }
-    
-    int getHeight(){
+
+    int getHeight()
+    {
         return h;
     }
-    
-    long long CalculateVolume(){
-        long vol = static_cast<long long>(l*b*h);
+
+    long long CalculateVolume()
+    {
+        long vol = static_cast<long long>(l * b * h);
         return vol;
     }
-    
-    bool operator<(const Box& other) const {     // Overload the < operator
+
+    bool operator<(const Box &other) const
+    { // Overload the < operator
         // Compare this box with another box
         if (l < other.l)
-        return true;
+            return true;
         else if (l == other.l && b < other.b)
-        return true;
+            return true;
         else if (l == other.l && b == other.b && h < other.h)
-        return true;
+            return true;
         else
-        return false;
+            return false;
     }
-    
-    friend ostream& operator<<(ostream& out, const Box& B) {     // Friend function to overload <<
+
+    friend ostream &operator<<(ostream &out, const Box &B)
+    { // Friend function to overload <<
         out << B.l << " " << B.b << " " << B.h;
         return out;
     }
@@ -64,12 +73,12 @@ class Box
 
 int main()
 {
-    Box b1; // Default box: 0 0 0
+    Box b1;          // Default box: 0 0 0
     Box b2(2, 3, 4); // Box with dimensions 2 3 4
-    Box b3(b2); // Copy of b2
+    Box b3(b2);      // Copy of b2
 
     cout << b2.getLength() << " " << b2.getBreadth() << " " << b2.getHeight() << endl; // 2 3 4
-    cout << b2.CalculateVolume() << endl; // 24
+    cout << b2.CalculateVolume() << endl;                                              // 24
 
     if (b1 < b2)
         cout << "b1 is smaller" << endl;
@@ -119,7 +128,6 @@ int main()
 //         return out;
 //     }
 // };
-
 
 // void check2()
 // {

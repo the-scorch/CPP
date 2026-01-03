@@ -119,5 +119,10 @@ int main()
      }
      cout << "Sum of all possible substrings = " << sum << "\n\n";
 
+     string UPgreet = "Hello, buddy!";
+     transform(UPgreet.begin(), UPgreet.end(), UPgreet.begin(), ::toupper);
+     
+     cout << UPgreet << "\n\n";
+
      return 0;
 }

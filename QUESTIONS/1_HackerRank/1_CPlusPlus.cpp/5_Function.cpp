@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//https://www.hackerrank.com/challenges/c-tutorial-functions/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/c-tutorial-functions/problem?isFullScreen=true
 
 int great(int a, int b, int c, int d)
 {
@@ -13,7 +13,7 @@ int main()
 {
        int a, b, c, d;
        cin >> a >> b >> c >> d;
-       
+
        cout << great(a, b, c, d);
 
        return 0;

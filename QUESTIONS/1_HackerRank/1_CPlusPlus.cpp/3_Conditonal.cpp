@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//https://www.hackerrank.com/challenges/c-tutorial-conditional-if-else/problem?isFullScreen=true
+// https://www.hackerrank.com/challenges/c-tutorial-conditional-if-else/problem?isFullScreen=true
 
 int main()
 {
@@ -28,6 +28,6 @@ int main()
         cout << "nine";
     else
         cout << "Greater than 9";
-        
+
     return 0;
 }

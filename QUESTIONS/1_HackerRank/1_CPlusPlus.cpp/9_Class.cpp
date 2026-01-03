@@ -35,7 +35,7 @@ int main()
     string ln;
     int s;
     cin >> a >> fn >> ln >> s;
-    
+
     student robo(a, fn, ln, s);
     robo.id();
 

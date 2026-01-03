@@ -139,9 +139,7 @@ int main()
 
 	clock_t duration = clock() - before;
 
-	cout << "Duration: " << duration / CLOCKS_PER_SEC << " seconds\n\n\n";
-
-	cout << "\t\t THE END of C++ Language!! \t\t";
+	cout << "Duration: " << duration / CLOCKS_PER_SEC << " seconds\n\n";
 
 	return 0;
 }
