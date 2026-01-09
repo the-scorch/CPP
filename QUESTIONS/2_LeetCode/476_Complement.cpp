@@ -13,8 +13,8 @@ public:
             bits++;
             num1 >>= 1;
         }
-        unsigned int one = (1u << bits) - 1;
-        return one ^ num;
+        unsigned int one = (1u << bits) - 1; // 1<<3 = 1000, minus 1 = 0111 (all 1s mask)
+        return one ^ num;                    // 0111 ^ 101 = 010
     }
 };
 // same as Q.1009
