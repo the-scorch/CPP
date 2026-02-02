@@ -123,6 +123,16 @@ int main()
      transform(UPgreet.begin(), UPgreet.end(), UPgreet.begin(), ::toupper);
      
      cout << UPgreet << "\n\n";
+     // isupper(), islower(), isdigit()
+     // toupper(), tolower()
+     // reverse(str.begin(), str.end());
+     // str.reserver(size);
+     // str.resize(size);
+     // str.find(); Not Found == string::npos
+     // str.append(count, char);
+     //size_t nfst = str.find_first_not_of(ch); // finds first character that is not ch
+
+     // stringstream, i, o
 
      return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
      map<int, string> suspect = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {804, "Pranaw Prakash"}, {102, "Deceased"}};
-     // sorted in ascending order as per key (default)
+     // sort in ascending order as per key (default)
 
      cout << "Suspect 213: " << suspect[101]; // accessing Values - by Keys
      cout << endl
@@ -44,7 +44,7 @@ int main()
 
      cout << "\n\n";
 
-     map<int, string, greater<int>> suspect1 = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {103, "Nobody"}}; // sorted in descending order as per key
+     map<int, string, greater<int>> suspect1 = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {103, "Nobody"}}; // sort in descending order as per key
      for (auto sus : suspect1)
      {
           cout << "Suspect " << sus.first
