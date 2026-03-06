@@ -4,57 +4,54 @@ using namespace std;
 
 int main()
 {
+     // Vector : variable sized arrays
      vector<string> foods = {"Oats", "Eggs", "Lassi", "Chicken", "Milk"};
      for (string food : foods) // for-each loop
-     {
           cout << food << "\t";
-     }
 
-     cout << endl
-          << foods[1] << "\t" << foods[3] << "\n\n";
+     cout << '\n' << foods[1] << "\t" << foods[3] << "\n\n"; // access elements by Index
+     cout << foods.at(2) << '\n'; // safer access for out of Bounds
 
-     // Vector Functions
-     cout << foods.at(2) << endl; // also access by Index, but safer as shows error in out of range
      foods.at(2) = "Paneer";      // overwriting values
      cout << foods.at(2) << "\n\n";
 
-     cout << foods.front()                   // gives First element
-          << "\t" << foods.back() << "\n\n"; // gives Last element
+     cout << foods.front() << "\t" << foods.back() << "\n\n"; // gives First & Last element
 
-     foods.push_back("Peanuts"); // add elements at end
+     foods.push_back("Peanuts"); // add element at end
      foods.push_back("Banana");
      for (string food : foods)
-     {
           cout << food << "\t";
-     }
-     cout << endl;
+     cout << '\n';
 
-     foods.pop_back(); // removes an element from end
+     foods.pop_back(); // removes element at end
      for (string food : foods)
      {
           cout << food << "\t";
      }
      cout << "\n\n";
 
-     vector<int> nums;
-     cout << nums.size()                   // gives the vector Size
-          << "\t" << nums.empty() << endl; // if No elements = 0, Else = 0
+     vector<int> nums(4, 0);
+     cout << nums.capacity() << "\t" // max elements can be stored
+     << nums.size() << "\t" // no. of elements present
+     << nums.empty() << '\n'; // True if has No elements
 
-     cout << foods.size() << "\t" << foods.empty() << "\n\n";
+     nums.clear(); // removes all elements
+     cout << nums.capacity() << "\t" << nums.size() << "\n\n";
 
-     // vector<string>::iterator it; any type
-     auto it = foods.begin(); // Declare to first element
+     //vector<int>::iterator it = foods.begin();
+     auto it = foods.begin(); // Iterator to first element
+     cout << *it << "\t"; // dereferencing iterator for value
+     it = foods.begin() + 1; // to second element
      cout << *it << "\t";
-     it = foods.begin() + 1; // pointing to second element
-     cout << *it << "\t";
-     it = foods.end() - 1; // pointing to last element
+     it = foods.end() - 1; // to last element
      cout << *it << "\n\n";
      for (it = foods.begin(); it != foods.end(); it++)
      {
           if (*it == "Chicken")
           {
-               it = foods.erase(it); // remove the element
-          }
+               foods.erase(it); // removes the element
+               break;
+           }
      }
 
      for (it = foods.begin(); it != foods.end(); it++) // for-loop using iterator
