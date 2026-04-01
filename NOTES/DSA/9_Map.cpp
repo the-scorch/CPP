@@ -15,6 +15,9 @@ int main()
      }
      cout << '\n';
 
+     // map: data type of key = int, double, pair<int, int>
+     // unordered_map - int, double, string
+
      map<int, string> suspect = {{101, "Unknown"}, {213, "Ashitabh Srivastava"}, {804, "Pranaw Prakash"}, {102, "Deceased"}}; // Sorted in Ascending order as per key by default
      cout << "Suspect 213: " << suspect[101] << '\n';      // accessing value - by key
      cout << "Sespect 084: " << suspect.at(102) << "\n\n"; // safer access for out of bounds
