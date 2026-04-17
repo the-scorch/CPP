@@ -8,11 +8,11 @@ int main()
     char choice;
     do
     {
-        cout << "\n\tSimple Calculator\n\n";
+        cout << "\n\tCompound Calculator\n\n";
 
         double a, b;
         char op;
-        cout << "Enter Value1[Operator]Value2: ";
+        cout << "Enter -> Value1 [Operator] Value2: ";
         cin >> a >> op >> b;
 
         char ask;
@@ -20,7 +20,7 @@ int main()
         {
             if (ask == 'y' || ask == 'Y')
             {
-                cout << "Enter [Operator]Value2: ";
+                cout << "Enter -> [Operator] Value2: ";
                 cin >> op >> b;
             }
 

@@ -92,7 +92,7 @@ int main()
         switch (num)
         {
             case 1:
-            cout << "Added a 13th month or what??"
+            cout << "Added a 13th month or what??";
             break;
         }
         break;

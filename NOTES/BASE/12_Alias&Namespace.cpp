@@ -1,4 +1,5 @@
 #include <iostream>
+using i = int; // creating alias for data type
 
 namespace R1
 { // creating namespace
@@ -85,6 +86,9 @@ int main()
     v::fun4();
 
     fun5();
+
+    i num = 5;
+    cout << num << '\n';
 
     return 0;
 }

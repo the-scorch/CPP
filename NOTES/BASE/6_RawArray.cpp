@@ -5,11 +5,9 @@ using namespace std;
 
 int main()
 {
-
   // Array
-
   string cars[4] = {"Tata", "BMW", "GTR"}; // Declaring Array
-  cars[2] = "GT-R";                        // Assigning or overwriting value to array
+  cars[2] = "GT-R";                        // Assigning or overwriting value
 
   int nums[3] = {1945, 1916, 1970};
   nums[2] = 1969;
@@ -20,17 +18,14 @@ int main()
   {
     cout << a << ") " << cars[a] << " - " << nums[a] << "\n";
   }
-
   cout << "\n\n";
-
-  // For-each Loop
 
   string flavs[3];
   flavs[0] = "Butterscotch";
   flavs[1] = "Chocolate";
   flavs[2] = "Vanila";
 
-  for (string b : flavs) // Loop through array's elements
+  for (string b : flavs)
   {
     cout << b << "\t";
   }
@@ -58,7 +53,6 @@ int main()
   cout << endl;
 
   // 2D Array
-
   string letter[3][2] = {
       {"A", "B"},
       {"C", "D"},
@@ -74,6 +68,17 @@ int main()
     {
       cout << letter[e][f] << "\t";
     }
+  }
+  cout << '\n';
+
+  int mat[2][3] = {1, 2, 3, 4, 5, 6};
+  for (int i = 0; i < 2; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      cout << mat[i][j] << ' ';
+    }
+    cout << '\n';
   }
 
   cout << "\n\n";

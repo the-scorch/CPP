@@ -20,10 +20,14 @@ vector<string> tokenize(const string str, const regex re)
 
 int main()
 {
+     char name[20]; // char arrays = string
+     name[5] = '\0'; // stops taking input after 5 characters
+     cin >> name;
+
      string greet1 = "Hey, wayd?";
      char greet2[] = "Hey, wayd?"; // Alt. method to declare string
 
-     greet1.erase(6, 3); // Erases 3 characters from index 6
+     greet1.erase(6, 3); // Erases 3 characters from index 6, TC = O(n)
 
      cout << greet1 << "\n"
           << greet2 << "\n\n";
@@ -128,7 +132,7 @@ int main()
      // reverse(str.begin(), str.end());
      // str.reserver(size);
      // str.resize(size);
-     // str.find(); Not Found == string::npos
+     // str.find(); Not Found == string::npos, TC = O(n) or O(n*m)
      // str.append(count, char);
      //size_t nfst = str.find_first_not_of(ch); // finds first character that is not ch
 
