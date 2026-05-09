@@ -125,13 +125,14 @@ int main()
     box3.prev = &box2;
 
     cout << box1.data << " " << box1.next->data << " " << box1.next->next->data << endl;
-    cout << box2.data << " " << box2.next -> data << " " << box2.prev->data << endl;
+    cout << box2.data << " " << box2.next->data << " " << box2.prev->data << endl;
 
     U myUnion; // Union variable
     myUnion.i = 21;
     myUnion.c = 'A';
 
-    cout << "myUnion.i: " << myUnion.i << endl << "myUnion.c: " << myUnion.c << "\n\n";
+    cout << "myUnion.i: " << myUnion.i << endl
+         << "myUnion.c: " << myUnion.c << "\n\n";
 
     return 0;
 }

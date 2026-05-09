@@ -11,12 +11,25 @@ enum Level // group a named integer constants
     LETHAL = 4
 };
 
-enum class Month{ // Enum Class
-    Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+enum class Month
+{ // Enum Class
+    Jan = 1,
+    Feb,
+    Mar,
+    Apr,
+    May,
+    Jun,
+    Jul,
+    Aug,
+    Sep,
+    Oct,
+    Nov,
+    Dec
 };
 
-int func(int u, int v){
-    return (u*v)*10;
+int func(int u, int v)
+{
+    return (u * v) * 10;
 }
 
 int (*funptr)(int, int); // Normal function pointer
@@ -57,14 +70,15 @@ int main()
     cout << num << "\t" << decimals << "\n\n";
 
     typedef map<int, string> mp; // can even sepcify parameters like size and type
-    mp gfg {{1, "Geeks"}, {2, "For"}, {3, "Geeks"}};
-    for(auto& m : gfg){
+    mp gfg{{1, "Geeks"}, {2, "For"}, {3, "Geeks"}};
+    for (auto &m : gfg)
+    {
         cout << m.first << "\t" << m.second << endl;
     }
 
     int a = 20;
     int b = 18;
-    typedef int* iPtr;
+    typedef int *iPtr;
     iPtr ptra = &a;
     iPtr ptrb = &b;
     cout << "\nMemory Address of a = " << ptra << "\nAnd Value of b = " << *ptrb << "\n\n";

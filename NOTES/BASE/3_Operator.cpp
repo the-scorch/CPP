@@ -5,12 +5,7 @@ using namespace std;
 
 int main()
 {
-     // Arithmetic
-     int sum = 1 + 2;
-     int sub = 6 - 2;
-     int mul = 10 * 84;
-     int div = 64 / 4; // gives Quotient
-     int mod = 5 % 2;  // gives Remainder
+     // Arithmetic - Unary Operators (1 operand)
      int a = 10;
      ++a; // +1 Before using the value
      int c = 10;
@@ -19,10 +14,16 @@ int main()
      b++; // +1 After using the value
      int d = 10;
      d--;
+     // Binary Operators (2 operands)
+     int sum = 1 + 2;
+     int sub = 6 - 2;
+     int mul = 10 * 84;
+     int div = 64 / 4; // gives Quotient
+     int mod = 5 % 2;  // gives Remainder
      cout << sum << '\t' << sub << '\t' << mul << '\t' << div << '\t' << 64.43 / 4 << '\n'
           << mod << '\t' << a << '\t' << b << '\t' << c << '\t' << d << "\n\n";
 
-     // Assignment
+     // Assignment - Binary Operators
      int c1, c2, c3, c4, c5;
      c1 = c2 = c3 = c4 = c5 = 10;
      c1 += 7; // c1 = c1 + 7
@@ -74,7 +75,7 @@ int main()
           }
           for (char &c : bin) // 1's complement
           {
-               c = (c == '1') ? '0' : '1';
+               c = (c == '1') ? '0' : '1'; // Ternary Operator - 3 operands
           }
           for (int i = bin.size() - 1; i >= 0; i--) // 2's complement
           {

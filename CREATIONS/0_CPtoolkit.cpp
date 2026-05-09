@@ -12,6 +12,7 @@ using pii = pair<int,int>;
 #define read(a) for (auto &x : (a)) cin >> x;
 #define print(a) { for (auto x : (a)) cout << x << " ";}
 #define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
 
 // CONSTANTS
 const int MOD = 1e9 + 7;
@@ -31,11 +32,10 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int n;
-        cin >> n;
-        vector<int> A(n);
-        read(A);
     }
 
     return 0;
 }
+
+// TC = O()
+// SC = O()

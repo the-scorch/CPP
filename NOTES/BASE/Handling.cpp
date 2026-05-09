@@ -67,7 +67,7 @@ int main()
 
 	// File
 	ofstream File("work.txt"); // Create or Open file to write
-	if (!File.is_open())   // check opening of file
+	if (!File.is_open())	   // check opening of file
 	{
 		cerr << "\n\tError: Can't open the file to read!";
 		return 1;
@@ -90,7 +90,8 @@ int main()
 	}
 	if (ReadFile.eof()) // end of file
 	{
-		cout << "\n\n\tReached end of file.\n" << endl;
+		cout << "\n\n\tReached end of file.\n"
+			 << endl;
 	}
 	else
 	{
@@ -104,31 +105,33 @@ int main()
 	errorLog.close();
 
 	ofstream Binaryfile("file.bin", ios::binary);
-	if(!Binaryfile.is_open()){
+	if (!Binaryfile.is_open())
+	{
 		cerr << "\n\tError: Can't open the file to read!";
 		return 1;
 	}
 	string B = "Hey, there this is me again..Your Handsome Friend - Ashitabh!";
 	size_t Blen = B.length();
-    Binaryfile.write(reinterpret_cast<const char*>(&Blen),sizeof(Blen));//string size in binary
-    Binaryfile.write(B.c_str(), Blen); //string in binary
+	Binaryfile.write(reinterpret_cast<const char *>(&Blen), sizeof(Blen)); // string size in binary
+	Binaryfile.write(B.c_str(), Blen);									   // string in binary
 	Binaryfile.close();
 
 	ifstream file("file.bin", ios::binary);
-    if (!file) {
-        cerr << "\n\tError: Can't open the file to read!";
-        return 1;
-    }
+	if (!file)
+	{
+		cerr << "\n\tError: Can't open the file to read!";
+		return 1;
+	}
 	string B1;
-    size_t Blen1;
-    file.read(reinterpret_cast<char*>(&Blen1), sizeof(Blen1));//reading the string from binary
-    char* buffer = new char[Blen1 + 1];//converting for storing
-    file.read(buffer, Blen1);
-    buffer[Blen1] = '\0';
-    B1 = buffer;
-    cout << "File Data: " << B1;
-    delete[] buffer;
-    file.close();
+	size_t Blen1;
+	file.read(reinterpret_cast<char *>(&Blen1), sizeof(Blen1)); // reading the string from binary
+	char *buffer = new char[Blen1 + 1];							// converting for storing
+	file.read(buffer, Blen1);
+	buffer[Blen1] = '\0';
+	B1 = buffer;
+	cout << "File Data: " << B1;
+	delete[] buffer;
+	file.close();
 
 	return 0;
 }

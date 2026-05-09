@@ -1,6 +1,6 @@
 #include <iostream> // inuput & output
 #include <string>
-#include <climits>  // access data type limits
+#include <climits> // access data type limits
 #include <limits>
 #include <typeinfo> // identify data type
 using namespace std;

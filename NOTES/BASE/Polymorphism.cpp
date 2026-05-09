@@ -38,7 +38,7 @@ public:
     {
         cout << "Animal Sound!\n";
     }
-    virtual ~Animal(){}
+    virtual ~Animal() {}
 };
 
 class Dog : public Animal
@@ -89,7 +89,7 @@ int main()
     sherkhan.sound();
 
     Animal *animalPtr = new Dog();                // Base class pointer to derived class
-    Dog *dogPtr = dynamic_cast<Dog*>(animalPtr); // Downcasting - Base class pointer to Derived class pointer
+    Dog *dogPtr = dynamic_cast<Dog *>(animalPtr); // Downcasting - Base class pointer to Derived class pointer
     if (dogPtr)                                   // check typecasting
     {
         dogPtr->sound();

@@ -1,8 +1,12 @@
 #include <iostream>
-using i = int; // creating alias for data type
+#define PI 3.14                            // Object Macro
+#define PRINT(x) cout << "Value is: " << x // Function Macro
+#define DEBUG                              // Conditional Macro
 
-namespace R1
-{ // creating namespace
+using i = int;       // creating alias for data type
+using namespace std; // using whole namespace
+namespace R1         // creating namespace
+{
     void greet()
     {
         std::cout << "\nWelcome from Room 1" << std::endl;
@@ -15,9 +19,6 @@ namespace R2
         std::cout << "Welcome from Room 2" << "\n\n";
     }
 }
-
-using namespace std; // using whole namespace
-
 namespace area
 {
     void fun()
@@ -26,7 +27,6 @@ namespace area
     }
 }
 using area::fun; // only using one thing
-
 namespace outer
 {
     void fun1()
@@ -41,9 +41,6 @@ namespace outer
         }
     }
 }
-
-int n = 21; // global namespace
-
 namespace version
 {
     void fun3()
@@ -59,7 +56,6 @@ namespace version // extending namespace
     }
 }
 namespace v = version; // creates alias
-
 inline namespace space // direct access
 {
     void fun5()
@@ -68,8 +64,35 @@ inline namespace space // direct access
     }
 }
 
+int n = 21; // global namespace
+
 int main()
 {
+
+    int r;
+    cout << "\nEnter Radius of Circle: ";
+    cin >> r;
+    cout << "Area of Circle is: " << PI * r * r << "\n\n";
+
+    int n;
+    cin >> n;
+    PRINT(n);
+
+    int x = 5, y = 10;
+    int sum = x + y;
+// This block will only be compiled if DEBUG is defined
+#ifdef DEBUG
+    cout << "[DEBUG] x = " << x << endl;
+    cout << "[DEBUG] y = " << y << endl;
+    cout << "[DEBUG] sum = " << sum << endl;
+#endif
+
+    cout << "This is line " << __LINE__ << " in file " // Pre-Defined Macros
+         << __FILE__ << "\n";
+    cout << "Compiled on " << __DATE__;
+
+    i num = 5;
+    cout << num << '\n';
 
     R1::greet(); // access function from namepace
     R2::greet();
@@ -86,9 +109,6 @@ int main()
     v::fun4();
 
     fun5();
-
-    i num = 5;
-    cout << num << '\n';
 
     return 0;
 }

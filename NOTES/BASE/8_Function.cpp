@@ -5,10 +5,12 @@
 #include <algorithm>
 using namespace std;
 
+int x = 5; // Global Scope variable
+
 void function() // void type
 {
     cout << "My First Function" << "\t";
-    return; // can only end the function
+    return; // ends the function
 }
 
 int function1() // return type
@@ -31,7 +33,7 @@ bool checkeven(int a)
 int fsum(int a, int b) // Pass by Value: modify value's copy
 {
     return a + b;
-}//But for Array: it passes the pointer to 1st element
+} // But for Array: it passes the pointer to 1st element
 
 int fsum(int a, int b, int c) // Function Overloading
 {
@@ -45,22 +47,20 @@ void swap(string &d, string &e) // Pass by Reference: modify orignal value
     e = f;
 }
 
-void intro(string fname, int age = 19) // Default parameters, starts from right
+void printArr(int arr[], int n, int start = 0) // Default Arguments - right to left
 {
-    cout << fname << " Srivastava - " << age << "\n";
+    for (int i = start; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << '\n';
 }
 
-inline void function2() // suggests compiler to bypass the overhead of function call
+inline void function2() // requests compiler to bypass the overhead of function call
 {
-    int h = 24, // Local Scope variable
-        i = 10,
-        j = 2017;
-
-    cout << endl
-         << h << "\t" << i << "\t" << j << endl;
+    int h = 24; // Local Scope variable
+    cout << h << "\n\n";
 }
-
-int x = 5; // Global Scope variable
 
 void parray(int nums[4])
 {
@@ -68,35 +68,6 @@ void parray(int nums[4])
     {
         cout << nums[g] << ", ";
     }
-}
-
-int rsum(int k)
-{
-    if (k > 0)
-    {
-        return k + rsum(k - 1); // Recursion
-    }
-    else
-    {
-        return 0;
-    }
-}
-
-int fact(int n)
-{
-    int ans = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        ans = ans * i;
-    }
-    return ans;
-}
-
-int nCr(int n, int r)
-{
-    int num = fact(n);
-    int den = fact(r) * fact(n - r);
-    return num / den;
 }
 
 int ap(int a, int n, int d)
@@ -123,25 +94,6 @@ int setbit(int a, int b)
     return one;
 }
 
-int fibo(int n)
-{
-    if(n==0 || n==1){
-        return n;
-    }
-    else {
-        return fibo(n-1)+fibo(n-2);
-    }
-}
-
-void print(vector<int> v)
-{
-    for (auto x : v)
-    {
-        cout << x << " ";
-    }
-    cout << endl;
-}
-
 int main()
 {
 
@@ -160,31 +112,20 @@ int main()
     swap(fword, lword);
     cout << "Swapped: " << fword << lword << "\n\n";
 
-    intro("Ashitabh");
-    intro("Anshuman", 16); // overwrite default parameters
+    int arr[5] = {3, 6, 5, 7, 8};
+    printArr(arr, 5);
+    printArr(arr, 5, 3); // overwrites default arguments
 
     function2();
     cout << x << "\n\n";
 
     int nums[4] = {49, 94, 95, 43};
     parray(nums);
-
     cout << "\n\n";
 
-    cout << "Input: 1 = " << rsum(1) << endl
-         << "Input: 2 = " << rsum(2) << endl
-         << "Input: 3 = " << rsum(3) << endl
-         << "Input: 4 = " << rsum(4) << endl
-         << "Input: 5 = " << rsum(5) << endl
-         << "Input: 6 = " << rsum(6) << endl
-         << "Input: 7 = " << rsum(7) << endl
-         << "Input: 8 = " << rsum(8) << endl
-         << "Input: 9 = " << rsum(9) << endl
-         << "Input: 10 = " << rsum(10) << "\n\n";
+    cout << ap(5, 11, 3) << "\n\n";
 
-    cout << nCr(8, 2) << '\t' << ap(5, 11, 3) << "\n\n";
-
-    cout << setbit(4, 9) << '\t' << fibo(7) << "\n\n";
+    cout << setbit(4, 9) << '\t' << "\n\n";
 
     // Inbuilt Math Functions
     cout << "Max of Two: " << max(20, 74) << "\t" << min(-2, -4) << endl;
@@ -193,37 +134,7 @@ int main()
     cout << "Rounding to Bigger integer: " << ceil(2.57) << endl;
     cout << "Rounding to Smaller integer: " << floor(2.57) << endl;
     cout << "Natural Logarithm of 9: " << log(9) << endl;
-    cout << "Absoulte Value of -7: " << abs(-7) << "\n\n"; // gives absolute value
-
-    // Lambda Expresssion
-    auto res = [](int x) { // defining a lambda
-        return x + x;
-    };
-    cout << res(5) << "\n\n";
-
-    vector<int> v1, v2;
-
-    auto byRef = [&](int m) { // Capture all external variables by reference
-        v1.push_back(m);
-        v2.push_back(m);
-    };
-
-    auto byVal = [=](int m) mutable { // Capture all external variables by value, mutable - to modify captured variable, as taken as constant
-        v1.push_back(m);
-        v2.push_back(m);
-    };
-
-    auto mixed = [&v1, v2](int m) mutable { // Capture v1 by reference and v2 by value
-        v1.push_back(m);
-        v2.push_back(m);
-    };
-
-    byRef(20);
-    byVal(2347);
-    mixed(10);
-
-    print(v1);
-    print(v2);
+    cout << "Absoulte Value of -7: " << abs(-7) << "\n\n";
 
     return 0;
 }

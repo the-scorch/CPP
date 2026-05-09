@@ -56,13 +56,14 @@ struct Factorial<0>
 
 int main()
 {
+
+
     cout << myMin(7, 3) << endl; // auto declaration of function type
     cout << myMin<double>(14424.212, 1241512.2142) << endl;
     cout << myMin<char>('h', 'q') << "\n\n";
 
     ID<int> AKA(20, "Ashitabh Srivastava");
     ID<string> AKA1("21/03/2005", "Birth Day");
-
     AKA.print();
     AKA1.print();
 
@@ -73,7 +74,6 @@ int main()
     int n = 4;
     char arr1[5] = {'a', 'g', 'y', 'q', 'i'};
     int n1 = 5;
-
     cout << arrMax<int, 2>(arr, n) << "\t" << arrMax<char, 'a'>(arr1, n1) << "\n\n";
 
     cout << "Factorial of 5 is: " << Factorial<5>::value;
