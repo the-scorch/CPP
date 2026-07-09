@@ -63,6 +63,16 @@ int main()
     mySet5.clear();
     cout << mySet5.empty() << "\n\n";
 
+    set<int, greater<int>> B;
+    B.insert(23);
+    B.insert(34);
+    B.insert(64);
+    B.insert(12);
+    auto it = B.begin();
+    advance(it, 2); // moves the pointer forward
+
+    cout << *it << " ";
+
     // Multi-set : can store duplicate values
     multiset<int> ms = {3, 1, 2, 3};
     ms.insert(2);

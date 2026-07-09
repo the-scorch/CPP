@@ -15,15 +15,15 @@ using pii = pair<int,int>;
 #define rall(x) (x).rbegin(), (x).rend()
 
 // CONSTANTS
-const int MOD = 1e9 + 7;
+// const int MOD = 1e9 + 7;
 
 // UTILITY
-ll mod_add(ll a, ll b) {
-    return (a % MOD + b % MOD + MOD) % MOD;
-}
-ll mod_mul(ll a, ll b) {
-    return ((a % MOD) * (b % MOD)) % MOD;
-}
+// ll mod_add(ll a, ll b) {
+//     return (a % MOD + b % MOD + MOD) % MOD;
+// }
+// ll mod_mul(ll a, ll b) {
+//     return ((a % MOD) * (b % MOD)) % MOD;
+// }
 
 int main() {
     ios::sync_with_stdio(false);
@@ -36,6 +36,3 @@ int main() {
 
     return 0;
 }
-
-// TC = O()
-// SC = O()

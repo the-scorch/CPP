@@ -23,31 +23,31 @@ int main()
     cout << line.front() << "\n\n";
 
     // Priority Queue : Orders in certain way
-    priority_queue<int> maxh;
+    priority_queue<int> maxh; // Max Heap
     maxh.push(1);
     maxh.push(2);
     maxh.push(5);
     maxh.push(4);
-    int n = maxh.size();
+    int n = maxh.size(); // gives no. of elements
     for(int i=0; i < n; i++){
-        cout << maxh.top() << "\t";
-        maxh.pop();
+        cout << maxh.top() << "\t"; // gives top element = largest element
+        maxh.pop(); // removes element
     }
     cout << "\n\n";
 
-    priority_queue<int, vector<int>, greater<int>> minh;
+    priority_queue<int, vector<int>, greater<int>> minh; // Min Heap
     minh.push(1);
     minh.push(2);
     minh.push(5);
     minh.push(4);
     int n1 = minh.size();
     for(int i=0; i < n1; i++){
-        cout << minh.top() << "\t";
+        cout << minh.top() << "\t"; // gives top element = smallest element
         minh.pop();
     }
     cout << "\n\n";
 
-    cout << minh.empty();
+    cout << minh.empty(); // gives 1 = if the heap is empty
 
     return 0;
 }

@@ -11,11 +11,12 @@ int rsum(int k)
 
 int fact(int n)
 {
-    if (n == 0)
+    if (n == 0) // Base Case
         return 1;
 
     return n * fact(n - 1); // Tail Recursion
 }
+// SC = O(n)
 int nCr(int n, int r)
 {
     int num = fact(n);               // Recursive Call - to other function
@@ -31,6 +32,7 @@ int fibo(int n)
     else
         return fibo(n - 1) + fibo(n - 2);
 }
+// SC = O(n)
 
 int main()
 {

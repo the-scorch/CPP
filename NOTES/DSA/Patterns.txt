@@ -1,0 +1,136 @@
+    MOST IMPORTANT INTERVIEW PATTERNS
+
+1. Sliding Window
+2. Binary Search
+3. DFS/BFS
+4. Heap
+5. Greedy
+6. Prefix Sum
+7. Hashing
+8. Trees
+9. DP
+10. Graphs
+
+--------------------------------------------------
+
+    TIER 1 — MUST MASTER
+(These cover a HUGE percentage of interviews)
+
+1. Arrays
+   - Prefix Sum
+   - Traversals
+   - Kadane’s Algorithm
+
+2. Hashing
+   - Frequency Maps
+   - Counting Problems
+   - Lookup Optimization
+
+3. Two Pointers
+   - Pair Sum
+   - Sorted Array Problems
+   - Container Problems
+
+4. Sliding Window
+   - Longest Substring
+   - Fixed/Variable Window
+   - Subarray Problems
+
+5. Binary Search
+   - Search Space Problems
+   - Lower/Upper Bound
+   - Answer Binary Search
+
+6. Greedy
+   - Intervals
+   - Scheduling
+   - Activity Selection
+
+7. Stack
+   - Next Greater Element
+   - Balanced Parentheses
+   - Expression Problems
+
+8. Heap / Priority Queue
+   - Kth Largest
+   - Top K Elements
+   - Scheduling Problems
+
+9. DFS/BFS
+   - Graph Traversal
+   - Grid Problems
+   - Connected Components
+
+10. Trees
+   - Recursion
+   - Depth/Height
+   - Traversals
+   - BST
+
+--------------------------------------------------
+
+    TIER 2 — VERY IMPORTANT
+(Needed for 15+ LPA / Product Companies)
+
+1. Backtracking
+   - Subsets
+   - Permutations
+   - N Queens
+
+2. Dynamic Programming
+   - Knapsack
+   - LIS
+   - DP on Strings
+   - DP on Trees
+
+3. Graph Algorithms
+   - Dijkstra
+   - Topological Sort
+   - Shortest Path
+
+4. Monotonic Stack
+   - Histogram Problems
+   - Stock Span
+   - Next Greater/Smaller
+
+5. Union Find (DSU)
+   - Connected Components
+   - Cycle Detection
+
+6. Trie
+   - Prefix Search
+   - Word Dictionary
+
+7. Bit Manipulation
+   - XOR Tricks
+   - Bitmasking
+   - Subset Problems
+
+--------------------------------------------------
+
+    TIER 3 — ADVANCED
+(Mainly CP / Top Companies / Hard OAs)
+
+1. Segment Tree
+   - Range Queries
+   - Range Updates
+
+2. Fenwick Tree (BIT)
+   - Prefix Updates
+   - Prefix Queries
+
+3. Sparse Table
+   - RMQ
+   - Static Range Queries
+
+4. Heavy-Light Decomposition
+   - Advanced Tree Queries
+
+5. Digit DP
+   - Counting Problems
+
+6. KMP / Z Algorithm
+   - Pattern Matching
+   - String Search
+
+--------------------------------------------------
