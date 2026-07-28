@@ -44,6 +44,9 @@ int main()
     set<double> mySet5 = {1, 3.14, 9.8, 1.38};
     mySet5.insert(6.63); // add element
     mySet5.insert(9.1);
+    auto result = mySet5.insert(10); // insert() => pair<iterator, bool>
+    // result.first : iterator pointing to 10
+    // result.second : true or false - true if value was inserted i.e. value wasn't present
     mySet5.erase(1); // remove element by vale
     auto it = mySet5.begin();
     it++;

@@ -102,10 +102,10 @@ int main()
      int *p = arr;
      cout << p << '\t' << *p << '\n';
      cout << *arr + 1 << '\t' << *(arr + 1) << '\n';
-     
+
      // Internal working of the Index access
      // arr[i] = *(arr + i) <=> i[arr] = *(i + arr)
-     cout << arr[1] << '\t' << 1[arr] << "\n\n";
+     cout << arr[1] << '\t' << 1 [arr] << "\n\n";
 
      int (*ptr)[3] = &arr; // to whole array
      cout << ptr << '\n';

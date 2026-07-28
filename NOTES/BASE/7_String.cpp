@@ -3,6 +3,7 @@
 #include <limits>
 #include <regex>
 #include <vector>
+#include <sstream> // stringstream
 using namespace std;
 
 vector<string> tokenize(const string str, const regex re)
@@ -20,7 +21,7 @@ vector<string> tokenize(const string str, const regex re)
 
 int main()
 {
-     char name[20]; // char arrays = string
+     char name[20];  // char arrays = string
      name[5] = '\0'; // stops taking input after 5 characters
      cin >> name;
 
@@ -88,7 +89,7 @@ int main()
      string her = hii.substr(7, 4); // substring - index, size
      cout << her << endl;
 
-     int pos = hii.find(","); // index of character's first occurrence
+     int pos = hii.find(","); // index of first occurrence
 
      her = hii.substr(pos + 1); // all after character
      cout << her << endl;
@@ -98,7 +99,7 @@ int main()
 
      hii.replace(0, 5, "Hi"); // replace characters by index, size, string
      int n = hii.length();
-     
+
      for (int i = 0; i < n; i++) // print all possible substrings
      {
           for (int j = 1; j <= n - i; j++)
@@ -125,18 +126,56 @@ int main()
 
      string UPgreet = "Hello, buddy!";
      transform(UPgreet.begin(), UPgreet.end(), UPgreet.begin(), ::toupper);
-     
+
      cout << UPgreet << "\n\n";
      // isupper(), islower(), isdigit()
      // toupper(), tolower()
      // reverse(str.begin(), str.end());
-     // str.reserver(size);
+     // str.reserve(size);
      // str.resize(size);
      // str.find(); Not Found == string::npos, TC = O(n) or O(n*m)
      // str.append(count, char);
-     //size_t nfst = str.find_first_not_of(ch); // finds first character that is not ch
+     // size_t nfst = str.find_first_not_of(ch); // finds first character that is not ch
 
-     // stringstream, i, o
+     // StringStream
+     string s = "10 20.23 3021312.12312";
+     stringstream ss(s);
+     int a;
+     float b;
+     double c;
+     ss >> a >> b >> c;
+     cout << a << " " << b << " " << c << "\n\n";
+
+     string sentence = "I love Data Structures";
+     stringstream ss1(sentence); // Create a stream from the string
+     vector<string> words;
+     string word;
+     while (ss1 >> word) // Read one word at a time
+     {
+          words.push_back(word); // storing in vector
+     }
+
+     string fruits = "apple,banana,mango,orange";
+     stringstream ss2(fruits);
+     string fruit;
+     while (getline(ss2, fruit, ',')) // split words with Delmiiter as comma
+     {
+          cout << fruit << endl;
+     }
+     cout << endl;
+
+     stringstream ss3;
+     ss3 << "Age = " << 20;
+     ss3 << ", CGPA = " << 8.75 << "\n\n";
+     string result = ss3.str(); // extract as string
+     cout << result;
+
+     stringstream ss4;
+     ss4 << "Hello";
+     ss4.str(""); // Clear the contents
+     ss4.clear(); // Reset error flags
+     ss4 << "World\n\n";
+     cout << ss4.str();
 
      return 0;
 }
